@@ -18,7 +18,7 @@ const config = {
   devServer: {
     contentBase: resolve(__dirname, 'dist'),
     compress: true,
-    port: 8880,
+    port: 9000,
     historyApiFallback: true,
   },
   entry: {
@@ -93,7 +93,7 @@ const config = {
         }
       },
     },
-    minimize: true,
+    minimize: devMode ? false : true,
     minimizer: [
       new JsonMinimizerPlugin(),
       new CssMinimizerPlugin({ cache: true, parallel: true }),

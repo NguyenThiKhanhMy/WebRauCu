@@ -31,6 +31,7 @@ const HocVienList = (props: Props) => {
     Actions.GetGiangVien(dispatch);
   }, [props.Id]);
 
+  // console.log(props.Id)
   const ActionEvents = {
     onClickChange : async () => {
       let isValid = refDynamicForm.current.onValidation();

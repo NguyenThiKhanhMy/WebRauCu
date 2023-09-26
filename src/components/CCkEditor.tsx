@@ -54,7 +54,7 @@ const CCkEditor = (props: Props) => {
         onChange={(content: any) => {
           setContent(content)
         }}
-        onImageUploadBefore={handleImageUploadBefore}
+        onImageUpload={handleImageUploadBefore}
         setOptions={{
           imageGalleryUrl: process.env.Image_Gallery_Url,
           buttonList: [

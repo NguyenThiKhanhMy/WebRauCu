@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { connect } from "react-redux";
-import logo from "assets/img/logoRun.png";
+import logo from "assets/img/logo.jpg";
 import { useHistory, useLocation } from "react-router-dom";
 import MenuService from "services/MenuService";
 import { IUserInfo } from "common/Models";
@@ -14,7 +14,6 @@ import { Actions } from "store/Global/Action";
 import { Storage } from "common/Storage";
 import { Message } from "common/Enums";
 import CNotification from "components/CNotification";
-import CButton from "components/CButton";
 const { v4: uuidv4 } = require("uuid");
 
 interface Props {
@@ -48,7 +47,6 @@ const Header = (props: Props) => {
   const [inputSearch, setInputSearch] = useState("");
   const [name, setName] = useState("");
   const [changeSearch, setChangeSearch] = useState(false);
-  const [nameMob, setNameMob] = useState("");
   let userInfo: IUserInfo = JSON.parse(Storage.getSession("UserInfo"));
 
   const GoToOtherPage = (page: string) => {
@@ -92,30 +90,17 @@ const Header = (props: Props) => {
   }, []);
 
   useEffect(() => {
-    if(location.search.includes("?%2F")){
-      if (location.search == "?%2Fsukien") {
-        setName("/chinh-dang-chay-bo");
-      }
-      if (location.search == "?%2Ftintuc") {
-        setName("/kien-thuc");
-      }
+    if (location.search == "?/sukien") {
+      setName("/chinh-dang-chay-bo");
     }
-    else {
-      if (location.search == "?/sukien") {
-        setName("/chinh-dang-chay-bo");
-      }
-      if (location.search == "?/tintuc") {
-        setName("/kien-thuc");
-      }
+    if (location.search == "?/tintuc") {
+      setName("/kien-thuc");
     }
     if (!location.search) {
       setName(location.pathname);
     }
   }, [location.search]);
 
-  // useEffect(() => {
-  //   return () => {nameMob = false}
-  // },[])
   const Logout = () => {
     refNotification.current.showNotification("success", `Đăng xuất thành công`);
     props.UserLogout();
@@ -185,50 +170,32 @@ const Header = (props: Props) => {
     tree.Data?.map((tree: HData) => (
       <li key={uuidv4()}>
         <h6
+          data-bs-dismiss="offcanvas"
           onClick={() => {
             GoToOtherPage(tree.URL as string);
             setName(tree.URL as string);
           }}
           className={`${tree.URL == name ? "golden" : "unGolden"}`}
         >
-          <div className="d-flex justify-content-between">
-            <span data-bs-dismiss="offcanvas">{tree.Name}</span>
-            {tree.Children.length > 0 && (
-              <span
-                onClick={() => {
-                  // if (nameMob == tree.Name) {
-                  //   setNameMob("");
-                  // } else {
-                  if (tree.Name != nameMob) {
-                    setNameMob(tree.Name as string);
-                  }
-                  // }
-                }}
-              >
-                <i className="bi bi-arrow-down-circle-fill"></i>
-              </span>
-            )}
-          </div>
+          {tree.Name}
         </h6>
-        {tree.Children.length > 0 && nameMob == tree.Name ? (
-          <ul>
+        {tree.Children.length > 0 && (
+          <div className="row row-cols-2 mb-2 mt-2">
             {tree.Children.map((childe: any) => {
               return (
-                <li
+                <div
                   data-bs-dismiss="offcanvas"
                   key={uuidv4()}
                   onClick={() => {
                     GoToOtherPage(childe.URL as string);
                   }}
-                  className={`unGolden mb-2`}
+                  className={`unGolden col chilin`}
                 >
                   {childe.Name}
-                </li>
+                </div>
               );
             })}
-          </ul>
-        ) : (
-          <></>
+          </div>
         )}
       </li>
     ));
@@ -263,7 +230,6 @@ const Header = (props: Props) => {
           href={value.Value}
           className="header_link h-100"
           aria-label="See more"
-          target="_blank"
         >
           <i
             className={`${value.Code}`}
@@ -279,11 +245,11 @@ const Header = (props: Props) => {
   return (
     <header
       className="header_portal"
-      style={{ height: `${!changeSearch ? "100px" : "150px"}` }}
+      style={{ height: `${!changeSearch ? "100px" : "150px"}`, overflow: 'hidden' }}
     >
       <CNotification ref={refNotification} />
 
-      <section className="header_portal_top bg-danger text-light">
+      <section className="header_portal_top bg-success text-light">
         <section className="container-xl header_top_container d-flex align-items-center justify-content-between">
           <section className="header_top_mobile">
             <section
@@ -296,14 +262,14 @@ const Header = (props: Props) => {
                   <span>
                     <i className="bi bi-telephone-fill	"></i>
                   </span>
-                  <span className=" header_top_left_text">091 658 2783</span>
+                  <span className=" header_top_left_text">0914 693 379</span>
                 </section>
                 <section className="carousel-item">
                   <span>
                     <i className="bi bi-envelope-at-fill"></i>
                   </span>
                   <span className="header_top_left_text">
-                    hocviendangquangmarathon@oao.vn
+                    htxsapaagri@gmail.com
                   </span>
                 </section>
               </section>
@@ -363,7 +329,7 @@ const Header = (props: Props) => {
             >
               <span
                 style={{ fontSize: "calc(1rem*0.7)" }}
-                className="position-absolute top-100 start-100 translate-middle badge rounded-pill bg-danger"
+                className="position-absolute top-100 start-100 translate-middle badge rounded-pill bg-success"
               >
                 {cardCount()}
                 {" +"}
@@ -427,7 +393,7 @@ const Header = (props: Props) => {
                 onClick={() => {
                   GoToOtherPage("/dang-nhap");
                 }}
-                className="header_btn bg-danger text-light"
+                className="header_btn bg-success text-light"
                 style={{ width: "100px" }}
               >
                 Đăng nhập
@@ -537,15 +503,8 @@ const Header = (props: Props) => {
         </section>
       </section>
 
-      <div
-        className="searchinhg-su"
-        style={{
-          transition: "0s ease-in-out",
-          visibility: `${changeSearch ? "visible" : "hidden"}`,
-          display: "block",
-        }}
-      >
-        <div className="container-xl d-flex justify-content-end">
+      <div className="searchinhg-su" style={{transition: "0.3s ease-in-out", visibility: "visible", display:'block'}}>
+        <div className="container-xl">
           <div className="form-search2">
             <i className="bi bi-search"></i>
             <input
@@ -565,14 +524,6 @@ const Header = (props: Props) => {
               Tìm kiếm
             </span>
           </div>
-          <button
-            className="bt-s1 bg-danger text-light"
-            onClick={() => {
-              searchbarsuv();
-            }}
-          >
-            <i className="bi bi-x"></i>
-          </button>
         </div>
       </div>
     </header>

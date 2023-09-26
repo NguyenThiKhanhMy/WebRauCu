@@ -184,7 +184,7 @@ const KhoaHocForm = (props: Props) => {
                 placeholder={
                   check == 1 ? `Danh sách nhóm video` : `Danh sách nhóm ảnh`
                 }
-                filterable={true}
+                filterable={false}
                 multiple={false}
                 options={check == 1 ? dsNhomVideo : dsNhomAnh}
                 keyOptions={{ label: "Ten", value: "Id" }}
@@ -216,7 +216,6 @@ const KhoaHocForm = (props: Props) => {
                 }
                 dataItems={check == 1 ? state.ItemVideos : state.ItemAnhs}
               />
-              <div style={{ height: "200px" }}></div>
             </div>
           </div>
         </ACard>

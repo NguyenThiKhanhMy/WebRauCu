@@ -20,11 +20,16 @@ const KhoaHoc = (props: Props) => {
   const [state, dispatch] = useReducer(Reducer, InitState);
   const refNotification = useRef<any>();
 
-  const GoToDetailPage = (page: string, id: string, search: string) => {
+  const GoToDetailPage = (
+    page: string,
+    id: string,
+    search: string,
+    type: string
+  ) => {
     history.push({
       pathname: page,
-      state: { id: id },
-      search: `/${search}`,
+      state: { id: id, type: type },
+      search: `/${type}`,
     });
     window.scrollTo(0, 0);
   };
@@ -127,8 +132,9 @@ const KhoaHoc = (props: Props) => {
                               onClick={() =>
                                 GoToDetailPage(
                                   "/khoa-hoc-chi-tiet",
-                                  item.Ma as string,
-                                  item.Ma as string
+                                  item.Id as string,
+                                  item.TieuDe as string,
+                                  "khoahoc"
                                 )
                               }
                             >
@@ -138,7 +144,7 @@ const KhoaHoc = (props: Props) => {
                               {LabelPortal.ThoiHan} <b>{item.ThoiHan}</b> tháng
                             </p>
                             {item.ThoiHanTruyCapMienPhi &&
-                              item.ThoiHanTruyCapMienPhi !== 0 ? (
+                            item.ThoiHanTruyCapMienPhi !== 0 ? (
                               <p className=" card-text">
                                 {LabelPortal.MienPhiTruyCap}{" "}
                                 <b>{item.ThoiHanTruyCapMienPhi}</b> tháng

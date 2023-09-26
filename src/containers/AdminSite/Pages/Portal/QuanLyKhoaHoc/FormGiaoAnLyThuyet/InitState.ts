@@ -1,5 +1,4 @@
 import { Guid } from "common/Enums";
-import { IControlOptions } from "common/Models";
 
 export interface IModelItem {
     Id: String;
@@ -18,25 +17,12 @@ export interface IModelTree {
     Name: String;
     Children: Array<IModelTree>;
 }
-export interface ti{
-    TieuDe: string
-}
 export interface IState {
     ItemVideos: any,
     Item: IModelItem,
-    Tree: IModelTree[],
-    Options: IControlOptions[],
-    ItemChuyen: any,
-    ItemAnhs: ti[] 
+    Tree: IModelTree[]
 }
 export const InitState: IState = {
-    ItemAnhs: [],
-    ItemChuyen: {
-        // IdKhoaHocSrc: Guid.Empty,
-        // IdGiaoAnSrc: Guid.Empty,
-        Id: "",
-        IdKhoaHocDes: ""
-    },
     ItemVideos: [],
     Item: {
         Id: Guid.Empty,
@@ -56,6 +42,5 @@ export const InitState: IState = {
             Name: "Danh sách giáo án lý thuyết",
             Children: [],
         }
-    ],
-    Options: []
+    ]
 };

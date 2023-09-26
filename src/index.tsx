@@ -9,7 +9,7 @@ import { i18n } from 'element-react'
 import locale from 'element-react/src/locale/lang/vi'
 
 ReactDOM.render(
-    <Provider store={store}>    
+    <Provider store={store}>
         <App />
     </Provider>
     , document.getElementById('root')

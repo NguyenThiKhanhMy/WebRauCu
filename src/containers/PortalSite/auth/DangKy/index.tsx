@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-import banner from "assets/img/banner.jpg";
+import banner from "assets/img/BannerLog.png";
 import { Message, UserType } from "common/Enums";
 import { IResponseMessage } from "common/Models";
 import { Actions } from "store/Global/Action";
@@ -102,7 +102,7 @@ const DangKy = (props: Props) => {
       );
       return false;
     }
-    if (InputSignup.Password.length < 6) {
+    if (!Regular.password(InputSignup.Password)) {
       refNotification.current.showNotification(
         "warning",
         Message.Password_Wrong
@@ -189,7 +189,7 @@ const DangKy = (props: Props) => {
       <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-8 col-xl-6">
+            <div className="w-100 col-lg-8 col-xl-6">
               <div className="card rounded-3">
                 <img
                   src={banner}
@@ -230,20 +230,9 @@ const DangKy = (props: Props) => {
                     <div className="form-outline mb-4">
                       <input
                         type="text"
-                        placeholder="Email(*)"
+                        placeholder="Email"
                         onChange={(e: any) => {
                           onChange("UserName", e);
-                        }}
-                        className="form-control"
-                      />
-                    </div>
-
-                    <div className="form-outline mb-4">
-                      <input
-                        type="text"
-                        placeholder="Địa chỉ"
-                        onChange={(e: any) => {
-                          onChange("Address", e);
                         }}
                         className="form-control"
                       />
@@ -255,7 +244,7 @@ const DangKy = (props: Props) => {
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="Số điện thoại(*)"
+                            placeholder="Số điện thoại"
                             aria-label="Phone"
                             onChange={(e: any) => {
                               onChange("Phone", e);
@@ -314,7 +303,8 @@ const DangKy = (props: Props) => {
                       <p
                         className="mb-2 text-danger dan-dotfansm"
                       >
-                        Mật khẩu phải có ít nhất 6 ký tự
+                        Mật khẩu phải có ít nhất 8 ký tự, 1 chữ in hoa, chữ
+                        thường, số và kí hiệu
                       </p>
                       <p
                         className="mb-1 text-danger dan-dotfansm"
@@ -346,7 +336,7 @@ const DangKy = (props: Props) => {
                         onClick={() => {
                           Signup();
                         }}
-                        className="header_btn bg-danger text-light w120-famswmop"
+                        className="header_btn bg-success text-light w120-famswmop"
                       >
                         Đăng ký
                       </button>
@@ -360,7 +350,7 @@ const DangKy = (props: Props) => {
                         onClick={() => goToSignIn()}
                         className="k_dang_nhap"
                       >
-                        Đăng nhập.
+                        Đăng nhập ngay.
                       </span>
                     </p>
                   </div>

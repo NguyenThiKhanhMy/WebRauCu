@@ -44,16 +44,7 @@
         "Key": "KichHoatKhoaHoc",
         "Title": "Kích hoạt",
         "Align": "center",
-        "Options": [
-          {
-            "label": "Đã kích hoạt",
-            "value": true
-          },
-          {
-            "label": "Chưa kích hoạt",
-            "value": false
-          }
-        ]
+        "Options": [{"label": "Đã kích hoạt", "value": true}, {"label": "Chưa kích hoạt", "value": false}]
       }
     ],
     "ActionDefs": [
@@ -72,14 +63,6 @@
         "TitleTooltip": "Xem chi tiết",
         "Icon": "",
         "Action": "onClickShow"
-      },
-      {
-        "Key": "XoaGioHang",
-        "Title": "Xóa giỏ hàng",
-        "Type": "Button",
-        "TitleTooltip": "Xóa giỏ hàng",
-        "Icon": "",
-        "Action": "onClickDelete"
       }
     ]
   }

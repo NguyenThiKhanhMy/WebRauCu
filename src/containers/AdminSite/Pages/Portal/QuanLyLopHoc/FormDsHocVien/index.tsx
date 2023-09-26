@@ -34,7 +34,6 @@ const HocVienList = (props: Props) => {
   const refDynamicaTable = useRef<any>();
   const refDynamicaTableLichSu = useRef<any>();
   const refDynamicForm = useRef<any>();
-  const refConfirm_DeleteItem = useRef<any>();
   const [initNhanXet, setInitNhanXet] = useState({
     noiDungNhanXet: "",
     chamDiem: 0,
@@ -56,15 +55,6 @@ const HocVienList = (props: Props) => {
           title="Lịch sử học"
           onClick={() => {
             XemLichSuHoc();
-          }}
-        ></CButton>
-      );
-      buttons.push(
-        <CButton
-          key={"XoaHocVien"}
-          title="Xóa học viên"
-          onClick={() => {
-            refConfirm_DeleteItem.current.showConfirm();
           }}
         ></CButton>
       );
@@ -93,20 +83,6 @@ const HocVienList = (props: Props) => {
         ></CButton>
       );
       return buttons;
-    }
-  };
-  const XoaHocVien = async () => {
-    if (!getRowId()) {
-      refNotification.current.showNotification(
-        "warning",
-        Message.Require_Row_Selection
-      );
-      return;
-    }
-    let res: IResponseMessage = await Actions.XoaHocVien(props.Id, getRowId(), dispatch)
-    if (res && res.Success) {
-      Actions.GetItem(props.Id, dispatch);
-      refNotification.current.showNotification("success", res.Message);
     }
   };
   const XemLichSuHoc = () => {
@@ -144,24 +120,24 @@ const HocVienList = (props: Props) => {
     return refDynamicaTableLichSu.current.getRowId();
   };
 
-  useEffect(() => {
-    if (search.KiemTra && search.QuanTrong) {
+  useEffect(()=> {
+    if(search.KiemTra && search.QuanTrong){
       Actions.Search("all", dispatch)
     }
-    if (search.KiemTra && !search.QuanTrong) {
+    if(search.KiemTra && !search.QuanTrong){
       Actions.Search("kiemtra", dispatch)
     }
-    if (!search.KiemTra && search.QuanTrong) {
+    if(!search.KiemTra && search.QuanTrong){
       Actions.Search("quantrong", dispatch)
     }
     if (show == 1 && !search.KiemTra && !search.QuanTrong) {
       let data = state.DataItemHocVien.find((value: any) => value.Id == id);
       Actions.GetItemLichSu(data.UserName, dispatch);
     }
-    if (!show) {
+    if (!show){
       Actions.GetItem(props.Id, dispatch);
     }
-  }, [search, props.Id, show])
+  },[search,props.Id, show])
 
   const ActionEvents = {
     onClickSave: async () => {
@@ -204,7 +180,6 @@ const HocVienList = (props: Props) => {
 
   return (
     <>
-      <CConfirm ref={refConfirm_DeleteItem} Title="Thao tác này sẽ xóa học viên này" Ok={async () => { await XoaHocVien(); }} Canel={() => { }} />
       <CNotification ref={refNotification} />
       {show == 0 ? (
         <div>
@@ -250,7 +225,7 @@ const HocVienList = (props: Props) => {
                   }}
                 />
               </div>
-              {/* <div className="col-6">
+              <div className="col-6">
                 <CCheckbox
                   label={"Kiểm tra"}
                   value={search.KiemTra}
@@ -258,7 +233,7 @@ const HocVienList = (props: Props) => {
                     setKiemTra(e);
                   }}
                 />
-              </div> */}
+              </div>
             </div>
           </ACard>
           <CDynamicTable

@@ -17,8 +17,6 @@ import CNotification from "components/CNotification";
 import CConfirm from "components/CConfirm";
 import CSelect from "components/CSelect";
 import CDynamicTable from "components/CDynamicTable";
-import ListViewAnhJson from "./ListViewAnh.json";
-
 interface Props {
   khoaHocId: any;
 }
@@ -29,10 +27,7 @@ const FormGiaoAnLyThuyet = (props: Props) => {
   const refDynamicForm = useRef<any>();
   const refNotification = useRef<any>();
   const refConfirm_DeleteItem = useRef<any>();
-  const refDynamicFormChuyen = useRef<any>();
-  const reff = useRef<any>();
   const refConfirm_DeleteItems = useRef<any>();
-  const [Loai, setLoai] = useState(100);
   let FormGiaoAnLyThuyet: any = FormGiaoAnLyThuyetJson;
   let ListViewVideo: any = ListViewVideoJson;
   const [showSearchVideo, setShowSearchVideo] = useState(false);
@@ -40,14 +35,6 @@ const FormGiaoAnLyThuyet = (props: Props) => {
   const [nhomVideo, setNhomVideo] = useState(null);
   const [popup, setPopup] = useState(false);
   const refDynamicTableVideo = useRef<any>();
-  const refDynamicTableVideo2 = useRef<any>();
-  const [expand, setExpand] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const [nhomAnh, setNhomAnh] = useState(null);
-  const [dsNhomAnh, setDsNhomAnh] = useState([]);
-
-  // const [expand, setExpand] = useState(false);
-  const [arr, setArr] = useState([]);
   useEffect(() => {
     if (props.khoaHocId && props.khoaHocId != Guid.Empty) {
       Actions.GetTree(props.khoaHocId, dispatch);
@@ -58,13 +45,6 @@ const FormGiaoAnLyThuyet = (props: Props) => {
     };
     getNhomVideo();
   }, []);
-
-  useEffect(() => {
-    if (showSearch) {
-      Actions.GetTreeList(dispatch);
-    }
-  }, [showSearch]);
-
   const RemoveHightlightToRootElement = () => {
     let nodes: any = document.getElementsByClassName("el-tree-node__content");
     for (let i = 0; i < nodes.length; i++) {
@@ -73,25 +53,18 @@ const FormGiaoAnLyThuyet = (props: Props) => {
     }
   };
   const onNodeClicked = (data: any, node: any) => {
-    MenuId_Tree.current = data.Id;
-    if (data.Loai >= 0) {
-      if (data.Id != Guid.Empty) {
-        RemoveHightlightToRootElement();
-        setLoai(data.Loai);
-
-        Actions.GetItem(data.Id, dispatch);
-      } else {
-        refDynamicForm.current.setFirstSubmit(false);
-        Actions.RefeshItem(dispatch);
-      }
+    if (data.Id != Guid.Empty) {
+      RemoveHightlightToRootElement();
+      MenuId_Tree.current = data.Id;
+      Actions.GetItem(data.Id, dispatch);
     } else {
-      setLoai(100);
+      refDynamicForm.current.setFirstSubmit(false);
+      Actions.RefeshItem(dispatch);
     }
   };
   const RefeshTree = () => {
     if (props.khoaHocId && props.khoaHocId != Guid.Empty) {
       Actions.GetTree(props.khoaHocId, dispatch);
-      // setExpand(true)
     }
   };
 
@@ -106,7 +79,7 @@ const FormGiaoAnLyThuyet = (props: Props) => {
       if (props.khoaHocId && props.khoaHocId != Guid.Empty) {
         let id = MenuId_Tree.current;
         let res = await Actions.DeleteTree(id, dispatch);
-        if (res && res.Success) {
+        if(res && res.Success){
           Actions.GetTree(props.khoaHocId, dispatch);
         }
       }
@@ -114,44 +87,15 @@ const FormGiaoAnLyThuyet = (props: Props) => {
   };
   const ActionEvents = {
     onClickSaveImport: async () => {
-      let isValid = refDynamicFormChuyen.current.onValidation();
-      if (
-        isValid &&
-        MenuId_Tree.current != Guid.Empty &&
-        Loai == 0 &&
-        state.ItemChuyen.Id
-      ) {
-        let stateValues = refDynamicFormChuyen.current.getStateValues();
+      let isValid = refDynamicForm.current.onValidation();
+      if (isValid) {
+        let stateValues = refDynamicForm.current.getStateValues();
         let res: IResponseMessage = null;
-        res = await Actions.GetImportFile(
-          state.ItemChuyen.Id,
-          props.khoaHocId,
-          MenuId_Tree.current
-        );
+        res = await Actions.GetImportFile(stateValues, props.khoaHocId);
 
         if (res.Success) {
           refNotification.current.showNotification("success", res.Message);
-          setPopup(false);
-          await Actions.GetTree(props.khoaHocId, dispatch);
         }
-      }
-      if (MenuId_Tree.current == Guid.Empty) {
-        refNotification.current.showNotification(
-          "warning",
-          "Chưa chọn giáo án"
-        );
-      }
-      if (Loai != 0) {
-        refNotification.current.showNotification(
-          "warning",
-          "Chỉ chuyển được loại giáo án "
-        );
-      }
-      if (!state.ItemChuyen.Id) {
-        refNotification.current.showNotification(
-          "warning",
-          "Không tìm thấy khóa học"
-        );
       }
     },
     onClickImport: async () => {
@@ -188,8 +132,8 @@ const FormGiaoAnLyThuyet = (props: Props) => {
           dispatch
         );
         if (res.Success) {
-          RefeshTree();
           refNotification.current.showNotification("success", res.Message);
+          RefeshTree();
         }
       }
     },
@@ -228,7 +172,6 @@ const FormGiaoAnLyThuyet = (props: Props) => {
       refConfirm_DeleteItem.current.showConfirm();
     },
   };
-
   const DeleteById = async () => {
     let res: IResponseMessage = await Actions.DeleteById(
       MenuId_Tree.current,
@@ -255,7 +198,7 @@ const FormGiaoAnLyThuyet = (props: Props) => {
           <CButton
             title="Xóa"
             onClick={() => {
-              refConfirm_DeleteItems.current.showConfirm();
+              refConfirm_DeleteItems.current.showConfirm(); 
             }}
           />
         )}
@@ -316,61 +259,16 @@ const FormGiaoAnLyThuyet = (props: Props) => {
   const OnChangeNhomVideo = (e: any) => {
     Actions.GetDsVideoByIdNhomVideo(e, dispatch);
   };
-  const ButtonGroupsRender = () => {
-    return (
-      <>
-        <CButton
-          icon={"check"}
-          title={"Chọn khóa học"}
-          onClick={() => {
-            if (!refDynamicTableVideo2.current.getRowId()) {
-              refNotification.current.showNotification(
-                "warning",
-                Message.Require_Row_Selection
-              );
-              return;
-            }
-            var item = refDynamicTableVideo2.current.getRowSelected();
-            Actions.setURL_Anh({ id: item["0"][1], ten: item["0"][0] }, dispatch);
-            setShowSearch(false);
-          }}
-        />
-        <CButton
-          icon={"d-arrow-left"}
-          title="Quay lại"
-          onClick={() => {
-            setShowSearch(false);
-            Actions.GetDsVideoByIdNhomAnh(null, dispatch);
-          }}
-        />
-      </>
-    );
-  };
-
-  const onClickDynamicFormat = (key: any) => {
-    if (key == "IdKhoaHocDes") {
-      let stateValues = refDynamicFormChuyen.current.getStateValues();
-      Actions.SaveState(stateValues, dispatch);
-      setShowSearch(true);
-    }
-  };
   return (
     <>
-      <CConfirm
-        ref={refConfirm_DeleteItems}
-        Title="Thao tác này sẽ xóa giáo án này"
-        Ok={async () => {
-          await DeleteAll();
-        }}
-        Canel={() => { }}
-      />
+      <CConfirm ref={refConfirm_DeleteItems} Title="Thao tác này sẽ xóa giáo án này" Ok={async () => {await DeleteAll()}} Canel={()=>{}} />
       <CConfirm
         ref={refConfirm_DeleteItem}
         Title="Thao tác này sẽ xóa giáo án"
         Ok={async () => {
           await DeleteById();
         }}
-        Canel={() => { }}
+        Canel={() => {}}
       />
       <CNotification ref={refNotification} />
       <div className="row">
@@ -380,13 +278,11 @@ const FormGiaoAnLyThuyet = (props: Props) => {
             buttonGroups={ButtonGroupsRender_TreeMenu()}
           >
             <CTree
-              ref={reff}
               onNodeClicked={onNodeClicked}
               options={{ children: "Children", label: "Name" }}
               data={state.Tree}
               nodeKey={"Id"}
               defaultExpandedKeys={[Guid.Empty]}
-              defaultExpandAll={true}
             />
           </ACard>
         </div>
@@ -402,7 +298,7 @@ const FormGiaoAnLyThuyet = (props: Props) => {
                     key={"dsnhomvideo"}
                     value={nhomVideo}
                     placeholder="Danh sách nhóm video"
-                    filterable={true}
+                    filterable={false}
                     multiple={false}
                     options={dsNhomVideo}
                     keyOptions={{ label: "Ten", value: "Id" }}
@@ -425,38 +321,19 @@ const FormGiaoAnLyThuyet = (props: Props) => {
                 </div>
               </div>
             </ACard>
-          ) : popup && props.khoaHocId ? (
+          ) : popup ? (
             <ACard
-              title={!showSearch ? "Chuyển giáo án" : "Tìm khóa học"}
-              buttonGroups={
-                !showSearch ? ButtonGroupsRender_Import() : ButtonGroupsRender()
-              }
+              title={"Gửi file"}
+              buttonGroups={ButtonGroupsRender_Import()}
             >
-              {showSearch && (
-                <>
-                  <div className="row">
-                    <div className="col-sm-12">
-                      <CDynamicTable
-                        ref={refDynamicTableVideo2}
-                        id={ListViewAnhJson.DataGrid.Key}
-                        key={ListViewAnhJson.DataGrid.Key}
-                        columnDefs={ListViewAnhJson.DataGrid.ColumnDefs}
-                        dataItems={state.ItemAnhs}
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
-              {!showSearch && (
-                <CDynamicForm
-                  ref={refDynamicFormChuyen}
-                  initValues={state.ItemChuyen}
-                  formDefs={FormImport}
-                  actionEvents={ActionEvents}
-                  onclick={onClickDynamicFormat}
-                // options={state.Options}
-                />
-              )}
+              <CDynamicForm
+                ref={refDynamicForm}
+                options={[]}
+                initValues={state.Item}
+                formDefs={FormImport}
+                actionEvents={ActionEvents}
+                onclick={onClickDynamicForm}
+              />
             </ACard>
           ) : (
             <ACard title={"Nhập thông tin giáo án lý thuyết"}>

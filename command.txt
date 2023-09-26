@@ -1,2 +1,1 @@
-docker build -t web-running .
-docker run -d -p 80:80 --name web-running web-running
+docker build -t web-admin-gis .

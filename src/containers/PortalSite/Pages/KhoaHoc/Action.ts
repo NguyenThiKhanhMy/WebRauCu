@@ -18,20 +18,6 @@ export const Actions: any = {
       end: end,
     });
   },
-  GetMaKhoaHocPortal: async (start: any, end: any, key: any, dispatch: any) => {
-    let ids = key.split("/");
-    let id = ids[ids.length - 1];
-    let res: IResponseMessage =
-      await KhoaHocService.GetKhoaHocTheoMaMonHocPortal(id);
-
-    dispatch({
-      type: "GetItemKhoaHoc",
-      items: res.Data,
-      count: res.Data.length,
-      start: start,
-      end: end,
-    });
-  },
   GetKhoaHocSearch: async (search: any, dispatch: any) => {
     dispatch({
       type: "GetItemKhoaHocSearch",

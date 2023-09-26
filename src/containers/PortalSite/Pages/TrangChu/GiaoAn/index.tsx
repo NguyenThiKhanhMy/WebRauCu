@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 const { v4: uuidv4 } = require("uuid");
 import { useHistory } from "react-router-dom";
 import { IModelMonHocCon } from "./InitState";
@@ -8,15 +8,14 @@ import { Reducer } from "./Reducer";
 import { connect } from "react-redux";
 import { String } from "common/String";
 
-interface Props { }
+interface Props {}
 
 const GiaoAn = (props: Props) => {
   const history = useHistory();
   const [state, dispatch] = useReducer(Reducer, InitState);
-  const [activeTab, setActiveTab] = useState(0);
 
-  const GoToOtherPage = (page: string, search: any) => {
-    history.push({pathname: page, search: search});
+  const GoToOtherPage = (page: string) => {
+    history.push(page);
     window.scrollTo(0, 0);
   };
 
@@ -24,17 +23,13 @@ const GiaoAn = (props: Props) => {
     Actions.GetItemGiaoan(dispatch);
   }, []);
 
-  const onChangeTab = (e: any, ie: any) => {
-    setActiveTab(ie);
-  };
-
   const giaoan = state.DataItemsGiaoAn && (
     <section className="main_sub_detal rout-zxz mt-2 mb-2 ">
       <article className="container-xl d-flex flex-column">
         <h4 className="text-danger tieu-de">
           {state.DataItemsGiaoAn.TenTieuDe}
         </h4>
-        <section className=" mt-3">
+        <section className="container mt-3">
           <section className="row row-cols-1 row-cols-md-4 g-3 kt-round-dudat d-flex justify-content-center">
             {state.DataItemsGiaoAn.DanhSachMonHocCon.map(
               (tree: IModelMonHocCon) => (
@@ -64,7 +59,7 @@ const GiaoAn = (props: Props) => {
                     >
                       <p
                         className="card-title underline-head-tt text-uppercase"
-                        onClick={() => GoToOtherPage("/khoa-hoc", tree.MaURL)}
+                        onClick={() => GoToOtherPage("/khoa-hoc")}
                       >
                         {tree.TieuDe}
                       </p>
@@ -78,8 +73,7 @@ const GiaoAn = (props: Props) => {
             )}
           </section>
         </section>
-
-        {/* {state.DataItemsGiaoAn.DanhSachMonHocCon.map(
+        {state.DataItemsGiaoAn.DanhSachMonHocCon.map(
           (tree: IModelMonHocCon) => {
             return (
               <div key={uuidv4()}>
@@ -134,90 +128,7 @@ const GiaoAn = (props: Props) => {
               </div>
             );
           }
-        )} */}
-
-        <section className=" mt-4">
-          <div className="row nhom-su-kien mt-3">
-            <div className="col-sm-12">
-              <ul className="nav nav-tabs">
-                {state.DataItemsGiaoAn.DanhSachMonHocCon.map(
-                  (e: any, ie: any) => {
-                    return (
-                      <li
-                        key={uuidv4()}
-                        className="nav-item"
-                        onClick={() => {
-                          onChangeTab(e, ie);
-                        }}
-                      >
-                        <span
-                          className={
-                            "nav-link " + (ie == activeTab ? "active" : "")
-                          }
-                        >
-                          {e.TieuDe}
-                        </span>
-                      </li>
-                    );
-                  }
-                )}
-              </ul>
-            </div>
-          </div>
-          <div className="row">
-            {state.DataItemsGiaoAn.DanhSachMonHocCon.map((e: any, ie: any) => {
-              return (
-                <Fragment key={uuidv4()}>
-                  {ie == activeTab && (
-                    <section className="row row-cols-1 row-cols-md-4 g-3 kt-round-dudat d-flex justify-content-center">
-                      {e.DSKhoiMonHoc &&
-                        e.DSKhoiMonHoc.map((treeGiaoAn: IModelMonHocCon) => (
-                          <section
-                            key={uuidv4()}
-                            title={`${treeGiaoAn.TieuDe}`}
-                            className="col change-tt-aba"
-                          >
-                            <section
-                              className="card card_main_container  wrapper_c"
-                              style={{
-                                position: "relative",
-                              }}
-                            >
-                              <section className="wrapper_card">
-                                <img
-                                  loading="lazy"
-                                  src={String.fileUrl(
-                                    treeGiaoAn.URL_AnhDaiDien as string
-                                  )}
-                                  className="card-img-top ful-ga-ai"
-                                  alt="..."
-                                />
-                              </section>
-
-                              <section
-                                className="card-body card_body_override card-bodys"
-                                style={{ textAlign: "start" }}
-                              >
-                                <p
-                                  className="card-title underline-head-tt text-uppercase"
-                                  onClick={() => GoToOtherPage("/khoa-hoc", treeGiaoAn.MaURL)}
-                                >
-                                  {treeGiaoAn.TieuDe}
-                                </p>
-                                <p className=" card-text text-dark mo-ta mb-1">
-                                  {treeGiaoAn.MoTa}
-                                </p>
-                              </section>
-                            </section>
-                          </section>
-                        ))}
-                    </section>
-                  )}
-                </Fragment>
-              );
-            })}
-          </div>
-        </section>
+        )}
       </article>
     </section>
   );

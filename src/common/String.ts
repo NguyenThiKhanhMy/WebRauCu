@@ -94,9 +94,6 @@ export class String {
     if(string == "month"){
       return Thang[new Date(date).getMonth()]
     }
-    if(string == "year"){
-      return new Date(date).getFullYear()
-    }
     if(string == "hour"){
       return new Date(date).getHours()
     }

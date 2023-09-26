@@ -2,16 +2,9 @@ import React, { Suspense } from "react";
 import { connect } from "react-redux";
 import CLoading from "components/Loading"
 
-import BannerTop from "./BannerTop/index";
-import BannerBottom from "./BannerBottom/index";
-import GioiThieu from "./GioiThieu/index";
-import GiaoAn from "./GiaoAn/index";
-import KhoaHoc from "./KhoaHoc/index";
-import SuKien from "./SuKien/index";
-import ThanhTich from "./ThanhTich/index";
-import Blog from "./Blog/index";
-import TuVan from "./TuVan/index";
-import { Helmet } from 'react-helmet';
+const BannerTop = React.lazy(() => import("./BannerTop/index"));
+const GioiThieu = React.lazy(() => import("./GioiThieu/index"));
+const KhoaHoc = React.lazy(() => import("./KhoaHoc/index"));
 
 interface Props {}
 
@@ -20,21 +13,23 @@ const TrangChu = (props: Props) => {
 
   return (
     <main>
-      <Helmet>
-        <meta property="og:title" content="Trung tâm huấn luyện chạy bộ chuyên nghiệp hocchaybo.com" />
-        <meta property="og:image" content="https://hocchaybo.vn/Media/Images/Site/hocchaybo.vn-logo.png" />
-        <meta property="og:url" content="https://hocchaybo.com" />
-      </Helmet>  
-      <BannerTop />
-      <GioiThieu />
-      <GiaoAn />
+      <Suspense fallback={<CLoading/>}>
+        <BannerTop />
+      </Suspense>
+
+      <Suspense
+        fallback={<CLoading/>}
+      >
+        <GioiThieu />
+      </Suspense>
+
       {splitComponent}
-      <KhoaHoc />
-      {splitComponent}
-      <SuKien />
-      <BannerBottom />
-      <ThanhTich />
-      <TuVan />
+
+      <Suspense
+        fallback={<CLoading/>}
+      >
+        <KhoaHoc />
+      </Suspense>
     </main>
   );
 };

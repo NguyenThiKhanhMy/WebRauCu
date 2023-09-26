@@ -21,6 +21,7 @@ const CaNhan = (props: Props) => {
     }
   }, []);
 
+  console.log(state)
   const GoToDetailPage = (
     page: string,
     id: string,
@@ -69,17 +70,17 @@ const CaNhan = (props: Props) => {
                       <p
                         className="card-title  underline-head-tt"
                         onClick={() => {
-                          child.Loai == "Tin tức"
+                          child.Loai == "TinTuc"
                             ? GoToDetailPage(
                                 "/chi-tiet-tin-tuc",
                                 child.Id as string,
-                                child.Ma as string,
+                                child.TieuDe as string,
                                 "tintuc"
                               )
                             : GoToDetailPage(
                                 "/khoa-hoc-chi-tiet",
-                                child.Ma as string,
-                                child.Ma as string,
+                                child.Id as string,
+                                child.TieuDe as string,
                                 "khoahoc"
                               );
                         }}

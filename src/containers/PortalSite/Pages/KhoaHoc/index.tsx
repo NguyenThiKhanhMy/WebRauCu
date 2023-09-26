@@ -10,7 +10,7 @@ import { Guid, LabelPortal } from "common/Enums";
 import { String } from "common/String";
 import ReactPaginate from "react-paginate";
 import noimage from "assets/img/noimage.png";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const { v4: uuidv4 } = require("uuid");
@@ -30,7 +30,6 @@ const KhoaHoc = (props: Props) => {
   const pa = useRef(null);
   const pb = useRef(null);
   const [supers, setSupers] = useState(1);
-  const location = useLocation();
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -50,7 +49,6 @@ const KhoaHoc = (props: Props) => {
   };
 
   useEffect(() => {
-    
     Actions.GetTreeMonHocPortal(dispatch);
     Actions.GetLoaiKhoaHocHoatDongPortal(dispatch);
   }, []);
@@ -58,35 +56,9 @@ const KhoaHoc = (props: Props) => {
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
+
   useEffect(() => {
-    if(location.search)
-    {
-      let id = location.search.split("?")[1];
-      for(let i = 0;i < state.TreeMonHoc.length;i++)
-      {
-        if(state.TreeMonHoc[i].key == id)
-        {
-          setTheoKhoaHoc(state.TreeMonHoc[i].label)
-          break;
-        }
-        for(let j = 0;j < state.TreeMonHoc[i].nodes.length;j++)
-        {
-          if(state.TreeMonHoc[i].nodes[j].key == id)
-          {
-            setTheoKhoaHoc(state.TreeMonHoc[i].nodes[j].label)
-            break;
-          }
-        }
-      }
-    }
-  }, [state.TreeMonHoc])
-  useEffect(() => {
-    let id = Guid.Empty;
-    if(location.search)
-    {
-      id = location.search.split("?")[1];
-    }
-    Actions.GetMaKhoaHocPortal(itemOffset, itemOffset + 10, id, dispatch);
+    Actions.GetKhoaHocPortal(itemOffset, itemOffset + 10, Guid.Empty, dispatch);
   }, []);
 
   // useEffect(() => {
@@ -406,8 +378,8 @@ const KhoaHoc = (props: Props) => {
                               onClick={() =>
                                 GoToDetailPage(
                                   "/khoa-hoc-chi-tiet",
-                                  e.Ma as string,
-                                  e.Ma as string
+                                  e.Id as string,
+                                  e.Id as string
                                 )
                               }
                             >
@@ -434,7 +406,7 @@ const KhoaHoc = (props: Props) => {
                           <div className="col-sm-7">
                             <div className="card-body card-bodys">
                               <div className="row">
-                                <div className="col-sm-8 pl-0-mobi pl-5-mobi">
+                                <div className="col-sm-8 pl-0">
                                   <p className="card-text popse-khso-p">
                                     <small className="text-muted">
                                       {String.date(e.CreatedDateTime)}
@@ -458,7 +430,7 @@ const KhoaHoc = (props: Props) => {
                                     {noColorStar(e.TyLeDanhGia)}
                                   </span>
                                 </div>
-                                <div className="col-sm-4 pl-0-mobi pl-5-mobi">
+                                <div className="col-sm-4 pl-0">
                                   <p className="card-text gia-tien-kh-l marginBottom-5">
                                     <span>
                                       {e.HocPhiGiamGia < e.HocPhiGoc &&

@@ -10,7 +10,7 @@ const HoTroService = {
   },
   GetItemList: async () => {
     let res: any = await request({
-      url: `/${Por_CauHoi}/List?page=1&pageSize=1000&totalLimitItems=500`,
+      url: `/${Por_CauHoi}/List`,
       method: "get",
     });
     return res;

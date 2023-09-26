@@ -86,7 +86,7 @@ const Header = (props: Props) => {
     }
     const Logout = () => {      
       props.UserLogout();
-      history.push('/dqmrtlogin');
+      history.push('/login');
     }
     const GoToPageHome = () => {
       history.push('/');

@@ -127,11 +127,11 @@ const CaNhan = (props: Props) => {
           <div className="col-sm-12 col-md-9">
             {change === 1 && (
               <div className="tai-khoan-ca-nhan">
-                {/* <h3 className="mb-3">Tổng quan</h3>
+                <h3 className="mb-3">Tổng quan</h3>
                 <p className="mb-1">Họ và tên: Dương Đức Anh</p>
                 <p className="mb-1">Email: duongdoican@gmail.com</p>
-                <p className="mb-1">Ngày tham gia: 23 tháng 12 năm 2023</p> */}
-                {/* <p className="mb-3">Đã tham gia: 6 khóa học - 3 sự kiện</p> */}
+                <p className="mb-1">Ngày tham gia: 23 tháng 12 năm 2023</p>
+                <p className="mb-3">Đã tham gia: 6 khóa học - 3 sự kiện</p>
                 {/* <div className="split-avat"></div> */}
                 {/* <div className="d-flex align-items-center mb-3">
                   <div className="img-canhan">
@@ -151,7 +151,7 @@ const CaNhan = (props: Props) => {
                     <p>Chọn hình ảnh phù hợp, không phản cảm</p>
                   </div>
                 </div> */}
-                {/* <div className="split-avat mb-3"></div> */}
+                <div className="split-avat mb-3"></div>
                 <h3 className="mb-3">Cập nhật thông tin</h3>
                 <div className="col-sm-4">
                   <label>Họ và tên</label>

@@ -86,14 +86,6 @@
       "Action": "onClickRefesh"
     },
     {
-      "Key": "Turn",
-      "Title": "Chuyển giáo án",
-      "Type": "Submit",
-      "TitleTooltip": "",
-      "Icon": "",
-      "Action": "onClickImport"
-    },
-    {
       "Key": "Copy",
       "Title": "Sao chép",
       "Type": "Submit",

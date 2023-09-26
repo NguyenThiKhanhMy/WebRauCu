@@ -11,11 +11,6 @@
       "isLayout": true
     },
     {
-      "code": "ThanhTichHocVien",
-      "url": "/thanh-tich-hoc-vien",
-      "isLayout": true
-    },
-    {
       "code": "KhoaHocCaNhan",
       "url": "/khoa-hoc-ca-nhan",
       "isLayout": true
@@ -48,11 +43,6 @@
     {
       "code": "KienThuc",
       "url": "/kien-thuc",
-      "isLayout": true
-    },
-    {
-      "code": "ChinhDangChayBo",
-      "url": "/chinh-dang-chay-bo",
       "isLayout": true
     },
     {
@@ -98,11 +88,6 @@
     {
       "code": "ChiTietTinTuc",
       "url": "/chi-tiet-tin-tuc",
-      "isLayout": true
-    },
-    {
-      "code": "XemTinTuc",
-      "url": "/tin-tuc",
       "isLayout": true
     }
   ],

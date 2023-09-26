@@ -5,10 +5,15 @@
     "ColumnDefs": [
       {
         "Key": "Ma",
-        "Title": "Mã lớp học",
+        "Title": "Mã",
         "Align": "center",
         "Width": 100,
         "OrderBy": "asc"
+      },
+      {
+        "Key": "Ten",
+        "Title": "Tên",
+        "Align": "left"
       },
       {
         "Key": "KhoaHoc",

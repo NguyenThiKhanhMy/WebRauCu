@@ -90,7 +90,7 @@ const UserService = {
   },
   GetByList: async () => {
     let res: any = await request({
-      url: `/${Sys_User}/List/?page=1&pageSize=500&totalLimitItems=500&searchBy=type%3D2`,
+      url: `/${Sys_User}/List/?page=1&pageSize=10&totalLimitItems=500&searchBy=type%3D2`,
       method: "get",
     });
     return res;

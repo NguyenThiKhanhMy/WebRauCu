@@ -19,14 +19,8 @@
         "Title": "Trạng thái",
         "Align": "center",
         "Options": [
-          {
-            "value": true,
-            "label": "Hoạt động"
-          },
-          {
-            "value": false,
-            "label": "Không hoạt động"
-          }
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
         ]
       }
     ],

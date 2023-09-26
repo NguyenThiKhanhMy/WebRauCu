@@ -14,7 +14,6 @@ import { String } from "common/String";
 import { IResponseMessage } from "common/Models";
 import { LabelPortal, Message } from "common/Enums";
 import CNotification from "components/CNotification";
-import { Helmet } from "react-helmet";
 const HtmlToReactParser = require("html-to-react").Parser;
 const { v4: uuidv4 } = require("uuid");
 
@@ -29,27 +28,10 @@ const ChiTiet = (props: Props) => {
   const [state, dispatch] = useReducer(Reducer, InitState);
   const location = useLocation();
   const refNotification = useRef<any>();
+
   useEffect(() => {
-    let id = "";
-    if(location.state)
-    {
-      id = location.state.id
-    }
-    if(location.search)
-    {
-      if(location.search.includes("?%2F")){
-        id = location.search.split("?%2F")[1]
-      }
-      else{
-        id = location.search.split("?/")[1]
-      }
-    }
-    if(id.includes("&fbclid"))
-    {
-      id = id.split("&fbclid")[0];
-    }
-    Actions.GetDetailKhoaHoc(id, dispatch);
-    Actions.GetKhoaHocLienQuan(id, dispatch);
+    Actions.GetDetailKhoaHoc(location.state.id, dispatch);
+    Actions.GetKhoaHocLienQuan(location.state.id, dispatch);
   }, []);
 
   const goToDangKyNgay = () => {
@@ -151,14 +133,7 @@ const ChiTiet = (props: Props) => {
       search: `/${location.state.id}`,
     });
   };
-  const GoToDetailPage = (page: string, id: string, search: string) => {
-    history.push({
-      pathname: page,
-      state: { id: id },
-      search: `/${search}`,
-    });
-    window.scrollTo(0, 0);
-  };
+
   const khoaHoc = state.DataItemsKhoaHoc && (
     <div className="row row-cols-1 row-cols-md-4 g-3 kt-round-dudat">
       {state.DataItemsKhoaHoc.map((item: any) => (
@@ -177,18 +152,12 @@ const ChiTiet = (props: Props) => {
             </div>
 
             <div className="card-body card-bodys start-aib-aba">
-              <p className="card-title  underline-head-tt" onClick={() =>
-                GoToDetailPage(
-                  "/khoa-hoc-chi-tiet",
-                  item.Ma as string,
-                  item.Ma as string
-                )
-              }>{item.TieuDe}</p>
+              <p className="card-title  underline-head-tt">{item.TieuDe}</p>
               <p className=" card-text">
                 {LabelPortal.ThoiHan} <b>{item.ThoiHan}</b> tháng
               </p>
               {item.ThoiHanTruyCapMienPhi &&
-                item.ThoiHanTruyCapMienPhi !== 0 ? (
+              item.ThoiHanTruyCapMienPhi !== 0 ? (
                 <p className=" card-text">
                   {LabelPortal.MienPhiTruyCap}{" "}
                   <b>{item.ThoiHanTruyCapMienPhi}</b> tháng
@@ -232,13 +201,9 @@ const ChiTiet = (props: Props) => {
       ))}
     </div>
   );
+
   return (
     <div>
-      <Helmet>
-        <meta property="og:title" content={state.DataDetail.TieuDe} />
-        <meta property="og:image" content={String.fileUrl(state.DataDetail.URL_AnhChiTiet)} />
-        <meta property="og:url" content={window.location.href} />
-      </Helmet>  
       <CNotification ref={refNotification} />
       <img src={bg37} width="100%" height="auto" />
       <div className="main_course_detail">
@@ -303,7 +268,7 @@ const ChiTiet = (props: Props) => {
                   <p className="mb-2">
                     <i className="bi bi-cash"></i>&ensp;{" "}
                     {state.DataDetail.HocPhiGoc <=
-                      state.DataDetail.HocPhiGiamGia ? (
+                    state.DataDetail.HocPhiGiamGia ? (
                       <span className="text-danger text-didboi">
                         {String.num(state.DataDetail.HocPhiGoc)}đ
                       </span>
@@ -314,10 +279,10 @@ const ChiTiet = (props: Props) => {
                     )}{" "}
                     {state.DataDetail.HocPhiGoc >
                       state.DataDetail.HocPhiGiamGia && (
-                        <span className="losn-th">
-                          {String.num(state.DataDetail.HocPhiGoc)}đ
-                        </span>
-                      )}
+                      <span className="losn-th">
+                        {String.num(state.DataDetail.HocPhiGoc)}đ
+                      </span>
+                    )}
                   </p>
                   <div className="d-flex justify-content-center align-items-center flex-column">
                     <div className="d-flex mb-2">

@@ -1,57 +1,77 @@
 {
-    "VideoGioiThieu": {
+    "VideoGioiThieu" : {
         "TieuDe": "",
-        "DuongDanVideo": "https://www.youtube.com/embed/L0atFo7xEeA"
+        "DuongDanVideo": "https://www.youtube.com/embed/n7GvRN-oubU"
     },
     "MoTaGioiThieuHeader": {
         "TieuDe": "ĐĂNG QUANG MARATHON",
-        "MoTa": "<p class=\"text-center\">Chạy là đam mê<br />Thành công - Tỏa sáng - Khỏe mạnh</p><p class=\"mt-3\" style=\" text-align: justify \">Đăng Quang Marathon là đơn vị sáng lập, quản lý và training cho Hội những người chạy Marathon.Trong nhiều năm qua,Đăng Quang Marathon đã tiến hành training chạy bộ rất nhiều tỉnh trên đất nước Việt Nam điển hình như: Hà Nội, Hồ Chí Minh, Quảng Bình, Đà Nẵng và Tây Nguyên.<br /> Đăng Quang Marathon là nơi huấn luyện chạy bộ chuẩn căn bản cho những người mới bắt đầu chạy bộ tới các trình độ chạy 5km,10km,21km,42km… <br /> Kết thúc khóa học, học viên sẽ có được tư duy và phương pháp học chạy bộ căn bản, cải thiện thành tích và tránh chấn thương. <br/> Đăng Quang Marathon huấn luyện những người chạy bộ là dân văn phòng ngày đi làm 8 tiếng, cơ xương khớp cứng, sức bền yếu. <br/>Trong quá trình huấn luyện, học viên sẽ đạt được thành tích sub 2h với 21km hoặc sub 1h20,1h30,1h45 phút với cự ly 21km, ở cự ly 42.195km, người học sẽ đạt được FM sub 4h, 3h30,3h20,3h và thậm chí là đứng bục cao nhất..</p>"
+        "MoTa":  "<p class=\"text-center\">Chạy là đam mê<br />Thành công - Tỏa sáng - Khỏe mạnh</p><p class=\"mt-3\" style=\" text-align: justify \">Học viện Đăng Quang Marathon là đơn vị sáng lập, quản lý và training cho Hội những người chạy Marathon (Gọi tắt Team VRC Toàn Quốc).Trong hai năm qua, Học viện Đăng Quang Marathon đã xây dựng mạng lưới các Team VRC ở các tỉnh , thành phố lớn gồm Hà Nội, Hồ Chí Minh, Đà Nẵng,.. <br /> Học viện Đăng Quang Marathon là nơi huấn luyện chuyên nghiệp và chuẩn căn bản về chạy bộ, bạn sẽ được đào tạo từ những trình độ mới bắt đầu xỏ giày chạy bộ, đến đạt được các mục tiêu từ chạy 5km, 10km đến chạy Half Marathon 21km trong vòng 2h và chạy Full Marathon 42 km trong vòng 4h.<br /> Không chỉ vậy, học viện có những giáo án để bạn có thể phát triển dựa trên cơ địa của chính mình với mục tiêu HM sub 1h10 phút và FM sub 3h đối với những học viên muốn được đào tạo ở ngưỡng đứng bục và Elite.</p>"
     },
     "NoiDungGioiTHieu": [
         {
             "TieuDe": "Tôn chỉ đào tạo",
-            "NoiDung": [
-                "Hoạt động vì cộng đồng",
-                "Hướng tới người học và giúp đỡ người mới tiếp cận phương pháp huấn luyện hiệu quả",
-                "Phương pháp tập luyện tích lũy chuẩn căn bản, phát triển và huấn luyện từng nhóm cơ"
-            ],
+            "NoiDung": ["Hoạt động vì cộng đồng", "Hướng tới người học và giúp đỡ người mới tiếp cận phương pháp huấn luyện hiệu quả", "Phương pháp tập luyện tích lũy chuẩn căn bản, phát triển và huấn luyện từng nhóm cơ"],
             "DuongDanAnh": "https://media.istockphoto.com/id/1324624694/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-t%E1%BA%ADp-th%E1%BB%83-d%E1%BB%A5c-ch%E1%BA%A1y-marathon-tr%C3%AAn-%C4%91%C6%B0%E1%BB%9Dng-m%C3%B2n-b%E1%BB%9D-bi%E1%BB%83n-%C4%91%E1%BA%A7y-n%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=ibhTVzyWkLFQKZoa4JPE0uugydkLioBy1RCocyewLQo="
         },
         {
             "TieuDe": "Định hướng",
-            "NoiDung": [
-                "Mở rộng phạm vi dạy chạy bộ online trên toàn quốc",
-                "Giúp đỡ nhiều runner có cơ hội học tập kỹ thuật chạy bộ chuẩn căn bản",
-                "Phát triển mở rộng quy mô và nâng cao chất lượng của Hội những người chạy Marathon Vietnam"
-            ],
+            "NoiDung": ["Mở rộng phạm vi dạy học trên toàn quốc", "Giúp đỡ nhiều runner có cơ hội học tập kỹ thuật chạy bộ chuẩn căn bản", "Phát triển mở rộng quy mô và nâng cao chất lượng của Hội những người chạy Marathon Vietnam (VRC)"],
             "DuongDanAnh": "https://media.istockphoto.com/id/1324624694/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-t%E1%BA%ADp-th%E1%BB%83-d%E1%BB%A5c-ch%E1%BA%A1y-marathon-tr%C3%AAn-%C4%91%C6%B0%E1%BB%9Dng-m%C3%B2n-b%E1%BB%9D-bi%E1%BB%83n-%C4%91%E1%BA%A7y-n%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=ibhTVzyWkLFQKZoa4JPE0uugydkLioBy1RCocyewLQo="
         },
         {
             "TieuDe": "Mục tiêu",
-            "NoiDung": [
-                "Đào tạo và phát triển các học viên có tiềm năng đứng bục dưới sub 3h với FM",
-                "Nâng tổng số học viên trên toàn quốc ngày một đông đảo hơn góp phần xây dựng một cộng đồng chạy bộ chuẩn căn bản"
-            ],
+            "NoiDung": ["Đào tạo và phát triển các học viên có tiềm năng đứng bục và sub 3h với FM", "Với team chính là Team Lê Quang cùng với các thành viên đứng bục, xây dựng đội VRC toàn quốc để trở thành CLB mạnh nhất Việt Nam", "Nâng tổng số học viên lên 5000 người và mở rộng giảng dạy ra các tỉnh thành khác trong cả nước"],
             "DuongDanAnh": "https://media.istockphoto.com/id/1324624694/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-t%E1%BA%ADp-th%E1%BB%83-d%E1%BB%A5c-ch%E1%BA%A1y-marathon-tr%C3%AAn-%C4%91%C6%B0%E1%BB%9Dng-m%C3%B2n-b%E1%BB%9D-bi%E1%BB%83n-%C4%91%E1%BA%A7y-n%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=ibhTVzyWkLFQKZoa4JPE0uugydkLioBy1RCocyewLQo="
         },
         {
             "TieuDe": "Sứ mệnh",
-            "NoiDung": [
-                "Truyền cảm hứng đam mê chạy bộ tới nhiều người hơn",
-                "Xây dựng cộng đồng chuẩn căn bản về kỹ thuật chạy bộ",
-                "Giúp người học khỏe mạnh hơn mỗi ngày"
-            ],
+            "NoiDung": ["Truyền cảm hứng và niềm đam mê chạy bộ", "Xây dựng Việt Nam thành một cộng đồng yêu thể thao", "Giúp người học khỏe mạnh hơn mỗi ngày"],
             "DuongDanAnh": "https://media.istockphoto.com/id/1324624694/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-t%E1%BA%ADp-th%E1%BB%83-d%E1%BB%A5c-ch%E1%BA%A1y-marathon-tr%C3%AAn-%C4%91%C6%B0%E1%BB%9Dng-m%C3%B2n-b%E1%BB%9D-bi%E1%BB%83n-%C4%91%E1%BA%A7y-n%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=ibhTVzyWkLFQKZoa4JPE0uugydkLioBy1RCocyewLQo="
         }
     ],
     "MoTaGioiThieuFooter": {
         "TieuDe": "ĐĂNG QUANG MARATHON",
-        "MoTa": "<p class=\"text-center\" style=\"font-weight: bold\">Với mục tiêu xây dựng phương pháp huấn luyện tiếp cận nhu cầu từng nhóm học viên</p><p class=\"mt-3\" style=\"text-indent: 30px; text-align: justify\">Trong những năm qua, Đăng Quang Marathon đã tiến hành đào tạo chạy bộ trực tuyến rất hiệu quả, đã kết nối với người học từ các vùng đất xa xôi, đến các thành phố lớn như Hà Nội, HCM, Đà Nẵng…và các vùng đất Tây Nguyên như Gia Lai, Lâm Đồng hay nhưng nơi như Hà Giang địa đầu của Tổ Quốc.<br/>Bên cạnh đó, giáo án đã được một số người VN ở nước ngoài học tập, đây là một sự khích lệ lớn vì nó đã có tính lan tỏa, không bị giới hạn bởi không gian, thời gian và cách xa về địa lý.<br/>Có nhiều người học đã giành được rất nhiều các thành tích tốt trong giải đấu và một số người tập đã đứng bục cao nhất trong các giải đã tham gia, điều đó minh chứng cho phương pháp huấn luyện phù hợp với người học của Đăng Quang Marathon.<br/>Đối tượng người học là những người đi làm yếu sức bền, cơ xương khớp cứng, giáo án sẽ có đầy đủ các bài tập từ sức bên, đến tập nhóm cơ và tốc độ để người tập đạt hiệu quả cao nhất. Với giáo án tập tích lũy, tính điểm rơi chuẩn cho các giải là sự khác biệt lớn nhất của Đăng Quang Marathon so với các đơn vị dạy chạy bộ tại Việt Nam.<br/>Trong quá trình phát triển Đăng Quang Marathon luôn mở rộng xây dựng các môn thể thao mới như Ironman(Bơi, Đạp, Chạy), Aquathlon(Bơi và chạy), Duathlon(Chạy bộ và đạp xe) để bắt kịp với tốc độ phát triển của thể thao nước nhà cũng như nắm bắt thị hiếu của người chơi thể thao cần một trung tâm chuyên nghiệp để đào tạo bài bản ngay từ khi mới bắt đầu tập luyện. Hãy đến với chúng tôi để trải nghiệm giáo dục trực tuyến về chạy bộ cũng như học trực tiếp cùng huấn luyện viên.</p>"
+        "MoTa": "<p class=\"text-center\" style=\"font-weight: bold\">Học viện xây dựng phương pháp huấn luyện tiếp cận với nhu cầu từng nhóm học viên</p><p class=\"mt-3\" style=\"text-indent: 30px; text-align: justify\">Trong những năm qua, Đăng Quang Marathon đã tiến hành đào tạo chạy bộ trực tuyến rất hiệu quả, đã kết nối với người học từ các vùng đất xa xôi, đến các thành phố lớn như Hà Nội, HCM, Đà Nẵng, Cần Thơ và các vùng đất Tây Nguyên như Gia Lai, Lâm Đồng hay nhưng nơi như Hà Giang địa đầu của Tổ Quốc.<br/>Bên cạnh đó, giáo án đã được một số người VN ở nước ngoài học tập, đây là một sự khích lệ lớn vì nó đã có tính lan tỏa, không bị giới hạn bởi không gian, thời gian và cách xa về địa lý.<br/>Có nhiều người học đã giành được rất nhiều các thành tích tốt trong giải đâu và một số người tập đã đứng bục cao nhất trong các giải đã tham gia, điều đó minh chứng cho phương pháp huấn luyện phù hợp của Đăng Quang Marathon.<br/>Đối tượng người học là những người đi làm yếu sức bền, cơ xương khớp cứng, giáo án sẽ có đầy đủ các bài tập từ sức bên, đến tập nhóm cơ và tốc độ để người tập đạt hiệu quả cao nhất. Với giáo án tập tích lũy, tính điểm rơi chuẩn cho các giải là sự khác biệt lớn nhất của Đăng Quang Marathon so với các đơn vị dạy chạy bộ tại Việt Nam.<br/>Trong quá trình phát triển Đăng Quang Marathon luôn mở rộng xây dựng các môn thể thao mới như Ironman(Bơi, Đạp, Chạy), Aquathlon(Bơi và chạy), Duathlon(Chạy bộ và đạp xe) để bắt kịp với tốc độ phát triển của thể thao nước nhà cũng như nắm bắt thị hiếu của người chơi thể thao cần một trung tâm chuyên nghiệp để đào tạo bài bản ngay từ khi mới bắt đầu tập luyện. Hãy đễn với chúng tôi để trải nghiệm giáo dục trực tuyến về chạy bộ cũng như học trực tiếp cùng huấn luyện viên.</p>" 
     },
     "TinTuc": {
         "TieuDe": "HOẠT ĐỘNG NỔI BẬT",
-        "MoTa": "<p class=\"mt-3 mb-5\" style=\"text-indent: 30px; text-align: justify\">Đăng Quang Marathon đã training rất nhiều nơi trên lãnh thổ Việt Nam, kể cả training trực tiếp lẫn dạy học trực tuyến, với phương châm đào tạo chạy bộ chuẩn căn bản tránh chấn thương. Trong nhiều năm qua, chúng tôi đã liên tục mở các khóa học online, đối tượng người học ở các tỉnh thành trong cả nước, thông qua hoạt động training trực tuyến chúng tôi đã đạt được những bước tiến vượt bậc và thu về những tiến bộ của người học và tạo được thế đứng trong giới chạy bộ phong trào Việt Nam.Đội ngũ Team Coach và Leader luôn nỗ lực tạo nên những nét riêng biệt bằng các buổi training hướng dẫn chỉnh dáng và kỹ thuật chạy chuẩn căn bản.</p>",
+        "MoTa": "<p class=\"mt-3 mb-5\" style=\"text-indent: 30px; text-align: justify\">Đăng Quang Marathon đã training rất nhiều nơi trên lãnh thổ Việt Nam, kể cả training trực tiếp lẫn dạy học trực tuyến, với phương châm đào tạo chạy bộ chuẩn căn bản tránh chấn thương. Trong nhiều năm qua, chúng tôi đã liên tục mở các khóa học online, đối tượng người học ở các tỉnh thành trong cả nước, thông qua hoạt động training trực tuyến chúng tôi đã đạt được những bước tiến vượt bậc và thu về những tiến bộ của người học và tạo được thế đứng trong giới chạy bộ phong trào Việt Nam.Đội ngũ Team Coach và Leader luôn nỗ lực tạo nên những nét riêng biệt bằng các buổi training thiết kế theo những mục tiêu cụ thể: </p>",
         "MaNhomTinTuc": "TT2",
         "SoLuong": 4
+    },
+    "ReviewTuHocVien": {
+        "TieuDe": "REVIEW TỪ HỌC VIÊN CŨ",
+        "Review": [
+            {
+                "Avatar": "assets/img/ava1.png",
+                "Ten": "Nguyễn Văn A",
+                "MoTa": "Học viên Giáo án Combo 3 môn",
+                "NoiDung": "“3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV, tuy nhiên nhờ giáo trình khoa học cùng với lời khuyên về dinh dưỡng của thầy Long, tôi đã hoàn thành được chặng đua Bơi - Chạy - Đạp xe.”"
+            },
+            {
+                "Avatar": "assets/img/ava1.png",
+                "Ten": "Nguyễn Văn A",
+                "MoTa": "Học viên Giáo án Combo 3 môn",
+                "NoiDung": "“3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV, tuy nhiên nhờ giáo trình khoa học cùng với lời khuyên về dinh dưỡng của thầy Long, tôi đã hoàn thành được chặng đua Bơi - Chạy - Đạp xe.”"
+            },
+            {
+                "Avatar": "assets/img/ava1.png",
+                "Ten": "Nguyễn Văn A",
+                "MoTa": "Học viên Giáo án Combo 3 môn",
+                "NoiDung": "“3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV, tuy nhiên nhờ giáo trình khoa học cùng với lời khuyên về dinh dưỡng của thầy Long, tôi đã hoàn thành được chặng đua Bơi - Chạy - Đạp xe.”"
+            },
+            {
+                "Avatar": "assets/img/ava1.png",
+                "Ten": "Nguyễn Văn A",
+                "MoTa": "Học viên Giáo án Combo 3 môn",
+                "NoiDung": "“3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV, tuy nhiên nhờ giáo trình khoa học cùng với lời khuyên về dinh dưỡng của thầy Long, tôi đã hoàn thành được chặng đua Bơi - Chạy - Đạp xe.”"
+            },
+            {
+                "Avatar": "assets/img/ava1.png",
+                "Ten": "Nguyễn Văn A",
+                "MoTa": "Học viên Giáo án Combo 3 môn",
+                "NoiDung": "“3 môn kết hợp là môn thể thao cực kỳ thử thách đối với các VĐV, tuy nhiên nhờ giáo trình khoa học cùng với lời khuyên về dinh dưỡng của thầy Long, tôi đã hoàn thành được chặng đua Bơi - Chạy - Đạp xe.”"
+            }
+        ]
     }
 }

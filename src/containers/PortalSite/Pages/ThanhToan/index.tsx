@@ -27,7 +27,7 @@ const ThanhToan = (props: Props) => {
   const [xacNhanThanhCong, setXacNhanThanhCong] = useState(false);
   const [state, dispatch] = useReducer(Reducer, InitState);
   const XacNhan = async () => {
-    let chiTietThanhToans = state.DataItem.map((child: any) => {
+    let chiTietThanhToans = state.DataItem.map((child:any) => {
       return {
         idKhoaHoc: child.Id,
         hocPhiGoc: child.HocPhiGoc,
@@ -36,9 +36,9 @@ const ThanhToan = (props: Props) => {
         thoiHanTruyCapMienPhi: 0
       }
     })
-    if (userInfo) {
+    if(userInfo){
       let info = await Actions.GetInfor()
-      let datas: any = {
+      let datas:any = {
         taiKhoan: info.Data.UserName,
         hoVaTenNguoiMua: info.Data.FullName,
         sdt: info.Data.Phone,
@@ -48,7 +48,7 @@ const ThanhToan = (props: Props) => {
         chiTietThanhToans: chiTietThanhToans
       }
       let res = await Actions.GetXacNhanThanhToan(datas, dispatch)
-      if (res.Data) {
+      if(res.Data){
         Storage.removeSession("cart-info");
         props.AddToCard(0);
         setXacNhanThanhCong(true);
@@ -57,15 +57,15 @@ const ThanhToan = (props: Props) => {
           Message.XAC_NHAN_THANH_THOAN_THAT_BAI_B
         );
       }
-      else {
+      else{
         refNotification.current.showNotification(
           "warning",
           Message.XAC_NHAN_THANH_THOAN_THAT_BAI_A
         );
       }
     }
-    else {
-      let datas: any = {
+    else{
+      let datas:any = {
         taiKhoan: "",
         hoVaTenNguoiMua: location.state.info.fullname,
         sdt: location.state.info.phone,
@@ -75,16 +75,16 @@ const ThanhToan = (props: Props) => {
         chiTietThanhToans: chiTietThanhToans
       }
       let res = await Actions.GetXacNhanThanhToan(datas, dispatch)
-      if (res.Data) {
+      if(res.Data){
         Storage.removeSession("cart-info");
         props.AddToCard(0);
         setXacNhanThanhCong(true);
         refNotification.current.showNotification(
           "success",
           Message.XAC_NHAN_THANH_THOAN_THAT_BAI_B
-        );
+        );        
       }
-      else {
+      else{
         refNotification.current.showNotification(
           "warning",
           Message.XAC_NHAN_THANH_THOAN_THAT_BAI_A
@@ -178,23 +178,19 @@ const ThanhToan = (props: Props) => {
                   <div className="col-sm-8 bold p-2">
                     {state.DataThanhToan && state.DataThanhToan.TenNganhang}
                   </div>
-                  <div className="col-sm-4 text-muted p-2">Số tài khoản:</div>
-                  <div className="col-sm-8 bold p-2">
-                    {state.DataThanhToan && state.DataThanhToan.SoTaiKhoan}
-                  </div>
                   <div className="col-sm-4 text-muted p-2">Chủ thẻ:</div>
                   <div className="col-sm-8 bold p-2">{state.DataThanhToan && state.DataThanhToan.ChuThe}</div>
                   <div className="col-sm-4 text-muted p-2">
                     Nội dung chuyển khoản:
                   </div>
                   <div className="col-sm-8 bold p-2">
-                    {state.DataThanhToan && state.DataThanhToan.NoiDungChuyenKhoan}
+                  {state.DataThanhToan && state.DataThanhToan.NoiDungChuyenKhoan}
                   </div>
                 </div>
               </div>
               <div className="d-flex flex-column justify-content-center align-items-center">
                 <h4 className=" text-center mb-3">Quét mã QR</h4>
-                <img width="150" height="150" className="mb-5" src={state.DataThanhToan && String.fileUrl(state.DataThanhToan.URL_AnhQRCode)} />
+                <img width="150" height="150" className="mb-5" src={state.DataThanhToan && state.DataThanhToan.URL_AnhQRCode} />
               </div>
             </div>
             <div className="d-flex justify-content-center align-items-center gap-3">
@@ -236,7 +232,10 @@ const ThanhToan = (props: Props) => {
             {"Xác nhận thanh toán thành công !"}
           </h4>
           <p className="text-center">
-            {"Xác nhận đăng ký khoá học, chúng tôi sẽ kích hoạt khoá học sau khi nhận được tiền trong tài khoản !"}
+            {"Đơn hàng của khách sẽ được chúng tôi xử lý"}
+          </p>
+          <p className="text-center">
+            {"Những thắc mắc vui lòng liên hệ qua điện thoại"}
           </p>
           <button
             onClick={() => {

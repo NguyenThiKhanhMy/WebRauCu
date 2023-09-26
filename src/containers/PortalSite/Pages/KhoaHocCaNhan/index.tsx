@@ -83,15 +83,15 @@ const CaNhan = (props: Props) => {
                 >
                   <p
                     className="card-title underline-head-tt text-uppercase"
-                    // onClick={() =>
-                    //   GoToOtherPage(
-                    //     "/hoc-ngay",
-                    //     tree.Id as string,
-                    //     tree.TieuDe as string,
-                    //     tree.IdLopHoc as string,
-                    //     tree.IdMonHoc as string
-                    //   )
-                    // }
+                    onClick={() =>
+                      GoToOtherPage(
+                        "/hoc-ngay",
+                        tree.Id as string,
+                        tree.TieuDe as string,
+                        tree.IdLopHoc as string,
+                        tree.IdMonHoc as string
+                      )
+                    }
                   >
                     {tree.TieuDe}
                   </p>

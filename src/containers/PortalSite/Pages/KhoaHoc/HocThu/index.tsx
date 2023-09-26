@@ -41,13 +41,6 @@ const HocThu = (props: Props) => {
       setPlayed(state.played)
     }
   }
-  useEffect(() => {
-    default_video();
-  }, []);
-  const scroll = () => {
-    const section = document.querySelector( '#scrool-to' );
-    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-  };
   const onDuration=(duration:any) => {
     setDuration(duration)
   }
@@ -66,7 +59,11 @@ const HocThu = (props: Props) => {
   const [noiDung, setNoiDung] = useState("");
   const location = useLocation();
   const [name, setName] = useState("");
- 
+  useEffect(() => {
+    Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
+    // Actions.GetGiaoAnLyThuyetTheoIdKhoaHoc(location.state.id, dispatch);
+    // Actions.GetGiaoAnThucHanhTheoIdKhoaHoc(location.state.id, dispatch);
+  }, []);
   const changeContent = (content: number) => {
     setChange(content);
   };
@@ -85,13 +82,11 @@ const HocThu = (props: Props) => {
   const GetLinkVideoLyThuyet = async (Id: any) => {
     var link = await Actions.GetLinkVideoLyThuyet(Id);
     setLinkVideo(link);
-    scroll();
   };
 
   const GetLinkVideoThucHanh = async (Id: any) => {
     var link = await Actions.GetLinkVideoThucHanh(Id);
     setLinkVideo(link);
-    scroll();
   };
 
   const GiaoAnLyThuyetRender = () => {
@@ -328,7 +323,7 @@ const HocThu = (props: Props) => {
   };
 
   async function default_video() {
-    let data = await Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
+    let data = await Actions.GetKhoaHocThu(location.state.id);
     if (data && data.GiaoAnLyThuyet.length > 0) {
       for (var i = 0; i < data.GiaoAnLyThuyet.length; i++) {
         if (data.GiaoAnLyThuyet[i].MienPhi) {
@@ -401,6 +396,9 @@ const HocThu = (props: Props) => {
     window.scrollTo(0, 0);
   };
 
+  useEffect(() => {
+    default_video();
+  }, []);
   const video = () => {
     let endPoint = String.video_endPoint(linkVideo.URL_Video ? linkVideo.URL_Video : "");
     return <>
@@ -438,18 +436,18 @@ const HocThu = (props: Props) => {
   }
   return (
     <>
-      <div id="scrool-to" className="text-center title-khoahoc-thu">
+      <div className="text-center title-khoahoc-thu">
         <p>{state.ItemKhoaHocThu && state.ItemKhoaHocThu.TieuDe}</p>
       </div>
       <div className="container">
         <div className="row mt-4">
-          <div className="col-sm-7 mb-3">
+          <div className="col-sm-7 mb-3 order-2 order-md-1">
             <div className="Card-Hoc">
               {video()}
             </div>
             {userInfo ? <Comment id={location.state.id} /> : <></>}
           </div>
-          <div className="col-sm-5 mb-4">
+          <div className="col-sm-5 mb-4 order-1 order-md-2">
             <div className="Card-Hoc">
               <div className="d-flex justify-content-between">
                 <div className="d-flex gap-4">

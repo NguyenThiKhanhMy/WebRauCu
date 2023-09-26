@@ -22,7 +22,7 @@ import Duration from "common/Duration";
 const HtmlToReactParser = require("html-to-react").Parser;
 const htmlToReactParser = new HtmlToReactParser();
 
-interface Props { }
+interface Props {}
 
 const HocThu = (props: Props) => {
   const [state, dispatch] = useReducer(Reducer, InitState);
@@ -42,33 +42,38 @@ const HocThu = (props: Props) => {
   const [played, setPlayed] = useState<any>(0);
   const [seeking, setSeeking] = useState<any>(false);
   const [duration, setDuration] = useState<any>(0);
-  const refPlayer = useRef<any>();
-  const [chuyenbai, setChuyen] = useState("");
-  useEffect(() => {
-    default_video();
-  }, []);
-  const onProgress = (state: any) => {
+  const refPlayer = useRef<any>()
+  const onProgress=(state:any) => {
     if (!seeking) {
-      setPlayed(state.played);
+      setPlayed(state.played)
     }
-  };
-  const onDuration = (duration: any) => {
-    setDuration(duration);
-  };
-  const handleSeekMouseDown = (e: any) => {
+  }
+  const onDuration=(duration:any) => {
+    setDuration(duration)
+  }
+  const handleSeekMouseDown = (e:any) => {
     setSeeking(true);
   };
 
-  const handleSeekChange = (e: any) => {
+  const handleSeekChange = (e:any) => {
     setPlayed(parseFloat(e.target.value));
   };
 
-  const handleSeekMouseUp = (e: any) => {
+  const handleSeekMouseUp = (e:any) => {
     setSeeking(false);
     refPlayer.current.seekTo(parseFloat(e.target.value));
   };
   let userInfo: IUserInfo = JSON.parse(Storage.getSession("UserInfo"));
 
+  useEffect(() => {
+    Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
+    if (show) {
+      Actions.GetPopup(dispatch);
+    }
+    // Storage.setSession("popup", false);
+    // Actions.GetGiaoAnLyThuyetTheoIdKhoaHoc(location.state.id, dispatch);
+    // Actions.GetGiaoAnThucHanhTheoIdKhoaHoc(location.state.id, dispatch);
+  }, []);
   const changeContent = (content: number) => {
     setChange(content);
   };
@@ -82,19 +87,14 @@ const HocThu = (props: Props) => {
     }
     return val;
   };
-  const scroll = () => {
-    const section = document.querySelector( '#scrool-to' );
-    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-  };
+
   const GetLinkVideoLyThuyet = async (Id: any) => {
     var link = await Actions.GetLinkVideoLyThuyet(Id);
     setLinkVideo(link);
-    scroll();
   };
   const GetLinkVideoThucHanh = async (Id: any) => {
     var link = await Actions.GetLinkVideoThucHanh(Id);
     setLinkVideo(link);
-    scroll();
   };
 
   const GiaoAnLyThuyetRender = () => {
@@ -192,6 +192,9 @@ const HocThu = (props: Props) => {
     if (e4.ChuaHoc) {
       return <></>;
     }
+    if (e4.Nghi) {
+      return <></>;
+    }
     if (e4.DaHoc) {
       return (
         <span
@@ -211,24 +214,6 @@ const HocThu = (props: Props) => {
       );
     }
     if (e4.DangHoc) {
-      var nghiHoc = e4.Name && (e4.Name.trim().toLowerCase() == "nghỉ" || e4.Name.trim().toLowerCase() == "thả lỏng: nghỉ");
-      if (nghiHoc) {
-        return <span
-          onClick={() => {
-            //xử lý ở đây
-            setName(e4.Name);
-            Actions.GetLichSu(location.state.IdLopHoc, e4.Id, 1, dispatch);
-            saveFile(e4.Id);
-            // Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
-          }}
-          className="text-danger title"
-          style={{
-            marginLeft: "8px",
-          }}
-        >
-          Chuyển bài
-        </span>
-      }
       return (
         <span
           onClick={() => {
@@ -308,14 +293,15 @@ const HocThu = (props: Props) => {
                                         e3.Children.map((e4: any, ie4: any) => {
                                           return (
                                             <Tree
-                                              content={
-                                                <div className="play">
-                                                  <i className="bi bi-play-circle text-danger"></i>{" "}
-                                                  {ThoiLuongRender(
-                                                    e4.ThoiLuong
-                                                  )}
-                                                  {ActionGiaoAn(e4)}
-                                                </div>
+                                              content={                                               
+                                                  e4.Nghi ? <></>:
+                                                  <div className="play">
+                                                    <i className="bi bi-play-circle text-danger"></i>{" "}
+                                                    {ThoiLuongRender(
+                                                      e4.ThoiLuong
+                                                    )}
+                                                    {ActionGiaoAn(e4)}
+                                                  </div>
                                               }
                                               type={
                                                 <span>
@@ -334,7 +320,7 @@ const HocThu = (props: Props) => {
                                                   >
                                                     {" "}
                                                     {e4.DaHoc == false &&
-                                                      e4.DangHoc == true ? (
+                                                    e4.DangHoc == true ? (
                                                       <b>{e4.Name}</b>
                                                     ) : (
                                                       e4.Name
@@ -395,10 +381,7 @@ const HocThu = (props: Props) => {
   };
 
   async function default_video() {
-    let data = await Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
-    if (show) {
-      Actions.GetPopup(dispatch);
-    }
+    let data = await Actions.GetKhoaHocThu(location.state.id);
     if (data && data.GiaoAnLyThuyet.length > 0) {
       for (var i = 0; i < data.GiaoAnLyThuyet.length; i++) {
         if (data.GiaoAnLyThuyet[i].MienPhi) {
@@ -479,6 +462,10 @@ const HocThu = (props: Props) => {
     }
   }
 
+  useEffect(() => {
+    default_video();
+  }, []);
+
   const goToDetailPage = () => {
     history.push("/khoa-hoc-ca-nhan");
     window.scrollTo(0, 0);
@@ -502,31 +489,17 @@ const HocThu = (props: Props) => {
     }
   };
 
-  const saveFile = async (Id?: any) => {
-    if (Id) {
-      let objectData = {
-        IdLopHoc: location.state.IdLopHoc,
-        IdGiaoAn: Id,
-        LoaiGiaoAnLy: "1",
-        NguoiNopBai: userInfo.UserName,
-        NoiDungNopBai: "Nghỉ",
-      };
-      await Actions.SaveFiles(nameRoush, objectData);
-      await Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
-      refNotification.current.showNotification("success", "Thao tác thành công");
-    } else {
-      let objectData = {
-        IdLopHoc: location.state.IdLopHoc,
-        IdGiaoAn: nopBai,
-        LoaiGiaoAnLy: "1",
-        NguoiNopBai: userInfo.UserName,
-        NoiDungNopBai: textArea,
-      };
-      await Actions.SaveFiles(nameRoush, objectData);
-      await Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
-      refNotification.current.showNotification("success", "Nộp bài thành công");
-    }
-
+  const saveFile = async () => {
+    let objectData = {
+      IdLopHoc: location.state.IdLopHoc,
+      IdGiaoAn: nopBai,
+      LoaiGiaoAnLy: "1",
+      NguoiNopBai: userInfo.UserName,
+      NoiDungNopBai: textArea,
+    };
+    await Actions.SaveFiles(nameRoush, objectData);
+    await Actions.GetKhoaHocThuPortal(location.state.id, dispatch);
+    refNotification.current.showNotification("success", "Nộp bài thành công");
   };
 
   const removeFile = (index: any) => {
@@ -590,7 +563,7 @@ const HocThu = (props: Props) => {
   const NopBaiSauSoTieng = (soTieng: any) => {
     if (
       new Date().getHours() -
-      new Date(state.ItemLichSu.CreatedDateTime).getHours() >=
+        new Date(state.ItemLichSu.CreatedDateTime).getHours() >=
       soTieng
     ) {
       return false;
@@ -603,72 +576,32 @@ const HocThu = (props: Props) => {
     setshow(false);
   };
   const video = () => {
-    let endPoint = String.video_endPoint(
-      linkVideo.URL_Video ? linkVideo.URL_Video : ""
-    );
+    let endPoint = String.video_endPoint(linkVideo.URL_Video ? linkVideo.URL_Video : "");
     return (
-      <div id="scrool-to">
+      <>
         {linkVideo && <h4>{name}</h4>}
         <div className="iframe-security">
-          {endPoint ? (
-            <ReactPlayer
-              ref={refPlayer}
-              onProgress={onProgress}
-              onDuration={onDuration}
-              playing={playing}
-              width="100%"
-              height="432px"
-              url={String.video(linkVideo.URL_Video ? linkVideo.URL_Video : "")}
-            />
-          ) : (
-            <></>
-          )}
+          {
+            endPoint ?
+            <ReactPlayer ref={refPlayer} onProgress={onProgress} onDuration={onDuration} playing={playing} width="100%" height="432px" url={String.video(linkVideo.URL_Video ? linkVideo.URL_Video : "")} />
+            :<></>
+          }
           <div className="row">
             <div className="col-sm-10">
-              <input
-                style={{ width: "100%" }}
-                type="range"
-                min={0}
-                max={1}
-                step="any"
-                value={played}
-                onMouseDown={handleSeekMouseDown}
-                onChange={handleSeekChange}
-                onMouseUp={handleSeekMouseUp}
-              />
+              <input style={{ width:"100%" }} type="range" min={0} max={1} step="any" value={played}
+                    onMouseDown={handleSeekMouseDown}
+                    onChange={handleSeekChange}
+                    onMouseUp={handleSeekMouseUp}/>
             </div>
             <div className="col-sm-2">
-              <Duration className={""} seconds={duration * played} />:
-              <Duration className={""} seconds={duration} />
+            <Duration className={""} seconds={duration * played} />:<Duration className={""} seconds={duration} />
             </div>
           </div>
           <div className="row">
             <div className="col-sm-12">
-              <button
-                className="el-button el-button--primary el-button--small bg-danger no-border"
-                onClick={() => {
-                  setPlaying(false);
-                }}
-              >
-                <i className="bi bi-stop-circle"></i> Dừng lại
-              </button>
-              <button
-                className="el-button el-button--primary el-button--small bg-danger no-border"
-                onClick={() => {
-                  setPlaying(true);
-                }}
-              >
-                <i className="bi bi-play-circle"></i> Bắt đầu
-              </button>
-              <button
-                className="el-button el-button--primary el-button--small bg-danger no-border"
-                onClick={() => {
-                  let element: any = findDOMNode(refPlayer.current);
-                  screenfull.request(element);
-                }}
-              >
-                <i className="bi bi-arrows-fullscreen"></i> Toàn màn hình
-              </button>
+            <button  className="el-button el-button--primary el-button--small bg-danger no-border" onClick={() => { setPlaying(false) }}><i className="bi bi-stop-circle"></i>{" "}Dừng lại</button>
+              <button className="el-button el-button--primary el-button--small bg-danger no-border" onClick={() => { setPlaying(true) }}><i className="bi bi-play-circle"></i>{" "}Bắt đầu</button>
+              <button className="el-button el-button--primary el-button--small bg-danger no-border" onClick={() => { let element:any = findDOMNode(refPlayer.current); screenfull.request(element); }}><i className="bi bi-arrows-fullscreen"></i>{" "}Toàn màn hình</button>
             </div>
           </div>
         </div>
@@ -676,7 +609,7 @@ const HocThu = (props: Props) => {
           <span className="doContent">Nội dung</span>
         </div>
         {htmlToReactParser.parse(linkVideo.NoiDung)}
-      </div>
+      </>
     );
   };
   return (
@@ -718,7 +651,7 @@ const HocThu = (props: Props) => {
       </div>
       <div className="container">
         <div className="row mt-4">
-          <div className="col-sm-7 mb-3">
+          <div className="col-sm-7 mb-3 order-2 order-md-1">
             {nopBai && trangThai ? (
               <div className="Card-Hoc">
                 <div className="col-md-12">
@@ -767,7 +700,7 @@ const HocThu = (props: Props) => {
 
             {userInfo ? <Comment id={location.state.IdLopHoc} /> : <></>}
           </div>
-          <div className="col-sm-5 mb-4">
+          <div className="col-sm-5 mb-4 order-1 order-md-2">
             {nopBai && !trangThai && (
               <>
                 <div className="Card-Hoc">

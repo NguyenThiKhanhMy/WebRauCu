@@ -2,24 +2,21 @@ import { InitState, IState } from "./InitState";
 export const Reducer = (state: IState = InitState, action: any) => {
   switch (action.type) {
     case "ChangeBox":
-      for (let i = 0; i < state.DataItem.length; i++) {
-        if (state.DataItem[i].IdKhoaHoc == action.item.IdKhoaHoc) {
+      for(let i = 0;i < state.DataItem.length;i++)
+      {
+        if(state.DataItem[i].IdKhoaHoc == action.item.IdKhoaHoc)
+        {
           state.DataItem[i].caNhan = action.item.Checked;
         }
       }
       return {
         ...state
       }
-    case "GetUserItems":
-      return {
-        ...state,
-        UserItems: action.items,
-      };
     case "GetItems":
       let newData = action.items.map((item: any) => {
         return {
           ...item,
-          caNhan: false
+          caNhan:false
         };
       });
       return {
@@ -39,7 +36,7 @@ export const Reducer = (state: IState = InitState, action: any) => {
       };
     case "changeCheckBox":
       let olddata = state.DataItem
-      olddata[action.index] = { ...olddata[action.index], check: action.e }
+      olddata[action.index] = {...olddata[action.index],check:action.e}
       return {
         ...state,
         DataItem: olddata,

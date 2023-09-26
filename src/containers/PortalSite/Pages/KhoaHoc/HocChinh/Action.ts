@@ -19,7 +19,6 @@ export const Actions: any = {
       type: "GetKhoaHocThuPortal",
       items: res.Data,
     });
-    return res.Data
   },
   GetPopup: async (dispatch: any) => {
     let res: IResponseMessage = await ConfigService.GetPopup();
@@ -29,10 +28,9 @@ export const Actions: any = {
     });
   },
   // GetPopup
-  GetKhoaHocThu: async (dispatch: any) => {
-    dispatch({
-      type: "stateReturn"
-    });
+  GetKhoaHocThu: async (idKhocHoc: any) => {
+    let res: IResponseMessage = await KhoaHocService.GetKhoaHocChinhPortal(idKhocHoc);
+    return res.Data
   },
   GetDetailKhoaHoc: async (id: any, dispatch: any) => {
     let res: IResponseMessage = await KhoaHocService.getById(id);

@@ -10,14 +10,5 @@ export const Actions: any = {
         items: res.Data.Items,
       });
     }
-    return res.Data.Items;
-  },
-  Active: async (id: String, dispatch: any) => {
-    let res: IResponseMessage = await UserService.Active(id);
-    return res;
-  },
-  UnActive: async (id: String, dispatch: any) => {
-    let res: IResponseMessage = await UserService.UnActive(id);
-    return res;
   },
 };

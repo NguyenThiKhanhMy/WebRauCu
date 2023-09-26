@@ -1,19 +1,17 @@
 {
-  "Key": "Chuyen",
-  "Title": "khoa học C",
+  "Key": "KhoaHoc",
+  "Title": "khoa học",
   "Rows": 1,
   "Controls": [
     {
-      "Key": "IdKhoaHocDes",
-      "Title": "Tìm khóa học",
-      "Type": "InputTextSearch",
+      "Key": "Upload",
+      "Title": "Upload",
+      "Type": "UploadFile",
       "IsRequired": true,
       "Row": 1,
-      "Placeholder": "Nhập giáo án cần chuyển",
       "ColLabel": 2,
       "ColControl": 10,
-      "ColSpanControl": 12,
-      "Disabled": true
+      "ColSpanControl": 12
     }
   ],
   "ActionDefs": [

@@ -207,7 +207,7 @@ const Signup = (props: Props) => {
                         <a
                           href="#"
                           onClick={() => {
-                            history.push("/dqmrtlogin");
+                            history.push("/login");
                           }}
                         >
                           Đăng nhập hệ thống

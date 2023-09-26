@@ -27,7 +27,7 @@ export enum Message {
   Add_To_Cart = "Thêm vào giỏ hàng thành công",
   XAC_NHAN_THANH_THOAN_THAT_BAI = "Xin chọn hạng mục cần thanh toán",
   XAC_NHAN_THANH_THOAN_THAT_BAI_A = "Thanh toán thất bại",
-  XAC_NHAN_THANH_THOAN_THAT_BAI_B = "Đã nhận được đăng ký khoá học"
+  XAC_NHAN_THANH_THOAN_THAT_BAI_B = "Thanh toán thành công"
 }
 export enum Guid {
   Empty = "00000000-0000-0000-0000-000000000000",
@@ -75,4 +75,4 @@ export const Thang = [
 ];
 
 export const TinTuc = ["img1", "img2", "img3"];
-export const AppName = "Đăng Quang Marathon";
+export const AppName = "Sapa Agri";

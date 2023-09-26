@@ -8,13 +8,6 @@ const Por_GiaoAnLyThuyetService = {
     });
     return res;
   },
-  GetMove: async (data: any) => {
-    let res: any = await request({
-      url: `/${Por_GiaoAnLyThuyet}/MoveGiaoAn?IdKhoaHocSrc=${data.IdKhoaHocSrc}&IdGiaoAnSrc=${data.IdGiaoAnSrc}&IdKhoaHocDes=${data.IdKhoaHocDes}`,
-      method: "get",
-    });
-    return res;
-  },
   GetImportFile: async (data: any, IdKhoaHoc: any) => {
     var formData = new FormData();
     if (data.Files) {

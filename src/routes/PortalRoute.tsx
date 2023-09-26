@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import LayoutPortal from "containers/PortalSite/Layouts";
 import TrangChu from "containers/PortalSite/Pages/TrangChu";
 import GioiThieu from "containers/PortalSite/Pages/GioiThieu";
-import ChinhDangChayBo from "containers/PortalSite/Pages/ChinhDangChayBo";
 import HoTro from "containers/PortalSite/Pages/HoTro";
 import KhoaHoc from "containers/PortalSite/Pages/KhoaHoc";
 import KienThuc from "containers/PortalSite/Pages/KienThuc";
@@ -23,9 +22,7 @@ import TimKiem from "containers/PortalSite/Pages/TimKiem";
 import KhoaHocCaNhan from "containers/PortalSite/Pages/KhoaHocCaNhan";
 import ThanhTichHocVien from "containers/PortalSite/Pages/ThanhTichHocVien";
 import ChungChi from "containers/PortalSite/Pages/ChungChi";
-import XemTinTuc from "containers/PortalSite/Pages/XemTinTuc";
-import ChatBot from "components/ChatBot";
-interface Props { }
+interface Props {}
 
 const PortalRoute = (props: Props) => {
   const LayoutPortalPaths: any = [];
@@ -34,7 +31,7 @@ const PortalRoute = (props: Props) => {
       case "TrangChu":
         return <TrangChu />;
       case "ChungChi":
-        return <ChungChi />
+        return <ChungChi/>
       case "GioiThieu":
         return <GioiThieu />;
       case "KhoaHoc":
@@ -43,8 +40,6 @@ const PortalRoute = (props: Props) => {
         return <KienThuc />;
       case "KhoaHocCaNhan":
         return <KhoaHocCaNhan />;
-      case "ChinhDangChayBo":
-        return <ChinhDangChayBo />;
       case "CaNhan":
         return <CaNhan />;
       case "HoTro":
@@ -69,8 +64,6 @@ const PortalRoute = (props: Props) => {
         return <DangKy />;
       case "ChiTietTinTuc":
         return <TinTuc />;
-      case "XemTinTuc":
-        return <XemTinTuc />;
       case "ThanhTichHocVien":
         return <ThanhTichHocVien />
       default:
@@ -110,23 +103,14 @@ const PortalRoute = (props: Props) => {
 
     return routesHtml;
   };
-  const OpenPhone = () => {
-    window.open('tel:0916582783');
-  }
   return (
     <div id="app-portal">
       <Route path={LayoutPortalPaths}>
         <LayoutPortal>
-          <Switch>
-            {RoutesRender(true)}
-          </Switch>
+          <Switch>{RoutesRender(true)}</Switch>
         </LayoutPortal>
       </Route>
       {RoutesRender(false)}
-      <a className="gs-btn-hotline gs-btn-fb-position" onClick={OpenPhone}>
-                <i className="bi bi-telephone"></i>
-            </a>
-      <ChatBot/>
     </div>
   );
 };

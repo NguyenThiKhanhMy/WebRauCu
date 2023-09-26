@@ -64,9 +64,9 @@ const FormGiaoAnThucHanh = (props: Props) => {
     }
   };
   const onNodeClicked = (data: any, node: any) => {
-    MenuId_Tree.current = data.Id;
     if (data.Id != Guid.Empty) {
       RemoveHightlightToRootElement();
+      MenuId_Tree.current = data.Id;
       Actions.GetItem(data.Id, dispatch);
     } else {
       refDynamicForm.current.setFirstSubmit(false);
@@ -116,9 +116,8 @@ const FormGiaoAnThucHanh = (props: Props) => {
           dispatch
         );
         if (res.Success) {
-          RefeshTree();
           refNotification.current.showNotification("success", res.Message);
-
+          RefeshTree();
         }
       }
     },
@@ -291,7 +290,7 @@ const FormGiaoAnThucHanh = (props: Props) => {
         Ok={async () => {
           await DeleteAll();
         }}
-        Canel={() => { }}
+        Canel={() => {}}
       />
       <CConfirm
         ref={refConfirm_DeleteItem}
@@ -299,7 +298,7 @@ const FormGiaoAnThucHanh = (props: Props) => {
         Ok={async () => {
           await DeleteById();
         }}
-        Canel={() => { }}
+        Canel={() => {}}
       />
       <CConfirmCustom
         ref={refConfirm_SaveItem}
@@ -307,7 +306,7 @@ const FormGiaoAnThucHanh = (props: Props) => {
         Ok={async () => {
           await saveData();
         }}
-        Canel={() => { }}
+        Canel={() => {}}
       />
 
       <CNotification ref={refNotification} />
@@ -323,7 +322,6 @@ const FormGiaoAnThucHanh = (props: Props) => {
               data={state.Tree}
               nodeKey={"Id"}
               defaultExpandedKeys={[Guid.Empty]}
-              defaultExpandAll={true}
             />
           </ACard>
         </div>
@@ -339,7 +337,7 @@ const FormGiaoAnThucHanh = (props: Props) => {
                     key={"dsnhomvideo"}
                     value={nhomVideo}
                     placeholder="Danh sách nhóm video"
-                    filterable={true}
+                    filterable={false}
                     multiple={false}
                     options={dsNhomVideo}
                     keyOptions={{ label: "Ten", value: "Id" }}

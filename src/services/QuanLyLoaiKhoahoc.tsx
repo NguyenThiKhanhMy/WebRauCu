@@ -25,7 +25,7 @@ const QuanLyLoaiKhoaHocService = {
   },
   GetList: async () => {
     let res: any = await request({
-      url: `/${Por_LoaiKhoaHoc}/List?page=1&pageSize=1000&totalLimitItems=500&searchBy=TrangThaiBanGhi%3Dtrue`,
+      url: `/${Por_LoaiKhoaHoc}/List?page=1&pageSize=10&totalLimitItems=500&searchBy=TrangThaiBanGhi%3Dtrue`,
       method: "get",
     });
     return res;

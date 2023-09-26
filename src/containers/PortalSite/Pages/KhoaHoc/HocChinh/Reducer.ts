@@ -26,7 +26,6 @@ export const Reducer = (state: IState = InitState, action: any) => {
           ...state,
           DataPopup: action.items[0]
         }
-   
     default:
       return state;
   }

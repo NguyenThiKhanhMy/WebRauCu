@@ -9,5 +9,12 @@ export const Actions: any = {
       type: "GetCauHinhBlog",
       items: res.Data,
     });
+  },
+  GetThanhTich: async (dispatch: any) => {
+    let res = {Data: data.ReviewTuHocVien.Review}
+    dispatch({
+      type: "GetThanhTich",
+      items: res.Data,
+    });
   }
 };

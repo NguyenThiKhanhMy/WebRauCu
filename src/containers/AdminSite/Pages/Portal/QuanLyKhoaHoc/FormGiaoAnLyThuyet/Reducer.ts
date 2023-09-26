@@ -34,26 +34,12 @@ export const Reducer = (state: IState = InitState, action: any) => {
           ...action.item,
         },
       };
-    case "GetTreeList":
-      return {
-        ...state,
-        ItemAnhs: action.items,
-      };
     case "setURL_VideoGiaoAnLyThuyet":
       return {
         ...state,
         Item: {
           ...state.Item,
           URL_Video: action.item,
-        },
-      };
-    case "setURL_Anh":
-      //const data: any = state.ItemAnhs.find((item: any) => { return item.TieuDe == action.item })
-      return {
-        ...state,
-        ItemChuyen: {
-          Id: action.item.id,//data.Id,
-          IdKhoaHocDes: action.item.ten,
         },
       };
     default:

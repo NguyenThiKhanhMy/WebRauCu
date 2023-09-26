@@ -12,7 +12,7 @@ import { Cookie } from "common/Cookie";
 const { v4: uuidv4 } = require("uuid");
 import { Storage } from "common/Storage";
 
-interface Props { }
+interface Props {}
 const GioHang = (props: Props) => {
   const history = useHistory();
   const [state, dispatch] = useReducer(Reducer, InitState);
@@ -25,7 +25,7 @@ const GioHang = (props: Props) => {
     Phone: "",
   });
 
-  const onChangeCap = (e: any, name: any) => {
+  const onChangeCap = (e:any, name: any) => {
     setInput({
       ...Input,
       [name]: e.target.value
@@ -33,30 +33,30 @@ const GioHang = (props: Props) => {
   }
   const gotoThanhToan = () => {
     if (state.Totalpre > 0) {
-      if (!userInfo) {
-        if (Input.Email && Input.FullName && Input.Phone) {
+      if(!userInfo){
+        if(Input.Email && Input.FullName && Input.Phone){
           history.push({
             pathname: "/thanh-toan",
-            state: { arr: arr, info: { fullname: Input.FullName, email: Input.Email, phone: Input.Phone } },
+            state: { arr: arr, info: {fullname:Input.FullName, email: Input.Email, phone: Input.Phone } },
             search: uuidv4(),
           });
         }
-        else {
+        else{
           refNotification.current.showNotification(
             "warning",
             "Hãy điền đủ thông tin"
           );
         }
       }
-      else {
+      else{
         history.push({
           pathname: "/thanh-toan",
           state: { arr: arr },
           search: uuidv4(),
         });
       }
-
-
+     
+     
     } else {
       refNotification.current.showNotification(
         "warning",
@@ -170,7 +170,65 @@ const GioHang = (props: Props) => {
         <div className="row">
           <div className="col-sm-8">
             <div className="row mb-2">
-              <div className="card mb-2">
+              {!userInfo && (
+                <div className="card mb-2">
+                  <div
+                    className="card-body"
+                    style={{ paddingTop: 10, paddingBottom: 10 }}
+                  >
+                    <h4 className="text-center">Thông tin đăng ký</h4>
+                    <div className="row">
+                      <div className="input-group mb-2 dda-lb">
+                        <label className="lb-fr lb-ada">
+                          Họ và tên <span className="text-danger">(*)</span>
+                          <input
+                            type="text"
+                            className="form-control lb-fr"
+                            placeholder="Họ và tên"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            onChange={(e) => {onChangeCap(e, "FullName")}}
+                          />
+                        </label>
+                      </div>
+                      <div className="input-group mb-2 dda-lb">
+                        <label className="lb-fr lb-ada ">
+                          Email <span className="text-danger">(*)</span>
+                          <input
+                            type="text"
+                            className="form-control lb-fr"
+                            placeholder="Email"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            onChange={(e) => {onChangeCap(e, "Email")}}
+                          />
+                        </label>
+                      </div>
+                      <div className="input-group mb-3 dda-lb">
+                        <label className="lb-fr lb-ada">
+                          Điện thoại <span className="text-danger">(*)</span>
+                          <input
+                            type="text"
+                            className="form-control lb-fr"
+                            placeholder="Điện thoại"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            onChange={(e) => {onChangeCap(e, "Phone")}}
+                          />
+                        </label>
+                      </div>
+                      {/* <button className="lb-btna mb-2">Tiếp theo</button> */}
+                      <h6 className="dda-lb text-end dda-text-lb"
+                      >
+                        Bạn đã có tài khoản? Hãy <a className="dda-a-text-lb" onClick={() => {goToOtherPage()}}>đăng nhập</a> để
+                        nhận nhiều ưu đãi hơn.
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div className="card">
                 <div
                   className="card-body"
                   style={{ paddingTop: 10, paddingBottom: 10 }}
@@ -208,6 +266,8 @@ const GioHang = (props: Props) => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="row">
               <div className="card">
                 <div className="card-body">
                   {state.DataItem &&
@@ -233,19 +293,19 @@ const GioHang = (props: Props) => {
                           </div>
                           <div className="col-sm-3 pl-0">
                             <img
-                              src={String.fileUrl(data.URL_AnhDaiDien)}
+                              src={String.fileUrl(data.URL_AnhDaiDien) }
                               className="img_card_tc"
                             />
                           </div>
                           <div className="col-sm-5 pr-0">
                             <p className="gio-hang-mg-top underline-head-tt" onClick={() =>
-                              GoToDetailPage(
-                                "/khoa-hoc-chi-tiet",
-                                data.Id as string,
-                                data.TieuDe as string,
-                                "khoahoc"
-                              )
-                            }>
+                                GoToDetailPage(
+                                  "/khoa-hoc-chi-tiet",
+                                  data.Id as string,
+                                  data.TieuDe as string,
+                                  "khoahoc"
+                                )
+                              }>
                               {data.TieuDe}
                             </p>
                           </div>
@@ -274,65 +334,6 @@ const GioHang = (props: Props) => {
                     })}
                 </div>
               </div>
-            </div>
-            <div className="row">
-              {!userInfo && (
-                <div className="card">
-                  <div
-                    className="card-body"
-                    style={{ paddingTop: 10, paddingBottom: 10 }}
-                  >
-                    <h4 className="text-center">Thông tin đăng ký</h4>
-                    <div className="row">
-                      <div className="input-group mb-2 dda-lb">
-                        <label className="lb-fr lb-ada">
-                          Họ và tên <span className="text-danger">(*)</span>
-                          <input
-                            type="text"
-                            className="form-control lb-fr"
-                            placeholder="Họ và tên"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                            onChange={(e) => { onChangeCap(e, "FullName") }}
-                          />
-                        </label>
-                      </div>
-                      <div className="input-group mb-2 dda-lb">
-                        <label className="lb-fr lb-ada ">
-                          Email <span className="text-danger">(*)</span>
-                          <input
-                            type="text"
-                            className="form-control lb-fr"
-                            placeholder="Email"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                            onChange={(e) => { onChangeCap(e, "Email") }}
-                          />
-                        </label>
-                      </div>
-                      <div className="input-group mb-3 dda-lb">
-                        <label className="lb-fr lb-ada">
-                          Điện thoại <span className="text-danger">(*)</span>
-                          <input
-                            type="text"
-                            className="form-control lb-fr"
-                            placeholder="Điện thoại"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                            onChange={(e) => { onChangeCap(e, "Phone") }}
-                          />
-                        </label>
-                      </div>
-                      {/* <button className="lb-btna mb-2">Tiếp theo</button> */}
-                      <h6 className="dda-lb text-end dda-text-lb"
-                      >
-                        Bạn đã có tài khoản? Hãy <a className="dda-a-text-lb" onClick={() => { goToOtherPage() }}>đăng nhập</a> để
-                        nhận nhiều ưu đãi hơn.
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
           <div className="col-sm-4">

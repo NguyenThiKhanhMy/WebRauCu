@@ -206,7 +206,7 @@
     },
     {
       "code": "Login",
-      "url": "/dqmrtlogin",
+      "url": "/login",
       "isLayout": false,
       "isMenu": false
     },

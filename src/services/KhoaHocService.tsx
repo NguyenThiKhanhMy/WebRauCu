@@ -15,13 +15,6 @@ const KhoaHocService = {
     });
     return res;
   },
-  GetTreeList: async () => {        
-    let res:any = await request({
-        url: `/${Por_KhoaHoc}/List?pageSize=1000`,
-        method: 'get'
-    });
-    return res
-},
   KichHoat: async (data: any) => {        
     let res:any = await request({
         url: `/${Por_KhoaHoc}/KichHoat`,
@@ -42,13 +35,6 @@ const KhoaHocService = {
       url: `/${Por_KhoaHoc}/ChonVaoGioHang`,
       method: "post",
       data
-    });
-    return res;
-  },
-  GetKhoaHocTheoMaMonHocPortal: async (id: String) => {
-    let res: any = await request({
-      url: `/${Por_KhoaHoc}/TheoMaMonHoc?maMonHoc=${id}`,
-      method: "get",
     });
     return res;
   },
@@ -118,9 +104,9 @@ const KhoaHocService = {
     });
     return res;
   },
-  getById: async (ma: any) => {
+  getById: async (id: any) => {
     let res: any = await request({
-      url: `/${Por_KhoaHoc}/ChiTiet/${ma}`,
+      url: `/${Por_KhoaHoc}/ChiTiet/${id}`,
       method: "get",
     });
     return res;

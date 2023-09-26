@@ -143,7 +143,7 @@ const MonHocForm = (props: Props) => {
                 key={"dsnhomanh"}
                 value={nhomAnh}
                 placeholder={`Danh sách nhóm ảnh`}
-                filterable={true}
+                filterable={false}
                 multiple={false}
                 options={dsNhomAnh}
                 keyOptions={{ label: "Ten", value: "Id" }}

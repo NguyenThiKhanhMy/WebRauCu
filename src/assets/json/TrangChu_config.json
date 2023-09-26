@@ -1,31 +1,27 @@
 {
-    "GioiThieu": {
-        "TieuDe": "ĐĂNG QUANG MARATHON",
+    "GioiThieu" : {
+        "TieuDe": "Sản phẩm nổi bật",
         "MaNhomTinTuc": "TT1",
         "SoLuong": 3
     },
     "MonHoc": {
         "TieuDe": "Các môn học nổi bật",
         "DsMaMonHoc": [
-            {
-                "MaMonHoc": "MH4",
-                "SoLuong": 8,
-                "ThuTu": 4
-            },
-            {
-                "MaMonHoc": "MH3",
-                "SoLuong": 8,
-                "ThuTu": 3
-            },
-            {
-                "MaMonHoc": "MH2",
-                "SoLuong": 8,
-                "ThuTu": 2
-            },
-            {
-                "MaMonHoc": "MH1",
-                "SoLuong": 8,
-                "ThuTu": 1
+            { 
+                "MaMonHoc": "MH4", 
+                "SoLuong": 8
+            }, 
+            { 
+                "MaMonHoc": "MH3", 
+                "SoLuong": 8
+            }, 
+            { 
+                "MaMonHoc": "MH2", 
+                "SoLuong": 8 
+            }, 
+            { 
+                "MaMonHoc": "MH1", 
+                "SoLuong": 8
             }
         ]
     },
@@ -61,15 +57,6 @@
             "SoLuong": 8
         }
     ],
-    "SuKien": {
-        "TieuDe": "Sự kiện mới nhất",
-        "TinhTrang": [
-            0,
-            1,
-            2
-        ],
-        "SoLuong": 4
-    },
     "TinTuc": {
         "TieuDe": "Blog tin tức",
         "MaNhomTinTuc": "TT2",

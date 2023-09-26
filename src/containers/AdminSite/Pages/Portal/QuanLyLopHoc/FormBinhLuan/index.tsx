@@ -20,6 +20,7 @@ const BinhLuanForm = (props: Props) => {
   const refNotification = useRef<any>();
   const refDynamicFormHocVien = useRef<any>();
  
+  console.log(state)
   useEffect(() => {
     Actions.GetItemHocVien(props.Id, dispatch);
   }, [props.Id]);

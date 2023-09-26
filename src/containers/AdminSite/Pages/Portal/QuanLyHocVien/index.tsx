@@ -20,8 +20,6 @@ interface Props {}
 
 const HocVienList = (props: Props) => {
   const [state, dispatch] = useReducer(Reducer, InitState);
-  const refConfirm = useRef<any>();
-
   const [hocVienId, sethocVienId] = useState("");
   const HocVienListView: any = HocVienListViewJson;
   const refNotification = useRef<any>();
@@ -44,7 +42,7 @@ const HocVienList = (props: Props) => {
       sethocVienId(getRowId());
       setDialogVisible(true);
     },
-    onClickActivate: async () => {
+    onClickActivate: () => {
       if (!getRowId()) {
         refNotification.current.showNotification(
           "warning",
@@ -52,7 +50,9 @@ const HocVienList = (props: Props) => {
         );
         return;
       }
-      refConfirm.current.showConfirm();
+      setBuild(2);
+      sethocVienId(getRowId());
+      setDialogVisible(true);
     },
     onClickUpdate: () => {
       if (!getRowId()) {
@@ -68,35 +68,8 @@ const HocVienList = (props: Props) => {
     },
     onClickCreate: () => {
       setBuild(4);
-      setDialogVisible(true);
-    },
-  };
-
-  const Actived = async () => {
-    let data = state.DataItems.find((val: any) => {
-      return val.Id == getRowId();
-    });
-    if (data) {
-      if (data.IsActive == true) {
-        let res = await Actions.UnActive(getRowId(), dispatch);
-        await Actions.GetItems(dispatch);
-        if (res && res.success) {
-          refNotification.current.showNotification(
-            "success",
-            "Cập nhật thành công"
-          );
-        }
-      } else {
-        let res = await Actions.Active(getRowId(), dispatch);
-        await Actions.GetItems(dispatch);
-        if (res && res.success) {
-          refNotification.current.showNotification(
-            "success",
-            "Cập nhật thành công"
-          );
-        }
-      }
-    }
+      setDialogVisible(true);    
+  },
   };
 
   const hideDialog = () => {
@@ -105,7 +78,6 @@ const HocVienList = (props: Props) => {
   const ReloadTableItems = () => {
     Actions.GetItems(dispatch);
   };
-
   const getRowId = () => {
     return refDynamicTable.current.getRowId();
   };
@@ -122,20 +94,8 @@ const HocVienList = (props: Props) => {
       <>
         {dialogVisible == true ? (
           <CDialog
-            style={{
-              width: `${
-                build == 3 || build == 1 || build == 4 ? "40%" : "30%"
-              }`,
-            }}
-            title={
-              build == 1
-                ? "Xem học viên"
-                : build == 2
-                ? "Kích hoạt học viên"
-                : build == 3
-                ? "Sửa thông tin học viên"
-                : "Thêm học viên"
-            }
+            style={{ width: `${(build == 3 || build == 1 || build == 4) ? "40%" : "30%"}` }}
+            title={build == 1 ? "Xem học viên" : build == 2 ? "Kích hoạt học viên" : build == 3 ? "Sửa thông tin học viên" : "Thêm học viên"}
             dialogVisible={dialogVisible}
             onCancel={() => setDialogVisible(false)}
           >
@@ -154,14 +114,6 @@ const HocVienList = (props: Props) => {
   }, [dialogVisible]);
   return (
     <>
-      <CConfirm
-        ref={refConfirm}
-        Title="Thao tác này sẽ cập nhật tình trạng học viên này"
-        Ok={async () => {
-          await Actived();
-        }}
-        Canel={() => {}}
-      />
       <CNotification ref={refNotification} />
       {DialogMemo}
       <ACard

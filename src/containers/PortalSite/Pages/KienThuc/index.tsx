@@ -64,7 +64,7 @@ const KienThuc = (props: Props) => {
     history.push({
       pathname: page,
       state: { id: id, type: type },
-      search: `/${search}`,
+      search: `/${type}`,
     });
     window.scrollTo(0, 0);
   };
@@ -94,18 +94,13 @@ const KienThuc = (props: Props) => {
                   GoToDetailPage(
                     "/chi-tiet-tin-tuc",
                     state.DataItemTinTucNoiBat[i].Id as string,
-                    state.DataItemTinTucNoiBat[i].MaURL as string,
+                    state.DataItemTinTucNoiBat[i].TieuDe as string,
                     "tintuc"
                   )
                 }
               >
                 {state.DataItemTinTucNoiBat[i].TieuDe}
               </h4>
-              {/* <p className="card-text  mt-1">
-                  <small className="text-muted">
-                    {String.date(state.DataItemTinTucNoiBat[i].NgayXuatBan)}
-                  </small>
-                </p> */}
               <p style={{ wordBreak: "break-word" }}>
                 {state.DataItemTinTucNoiBat[i].MoTa}
               </p>
@@ -138,7 +133,7 @@ const KienThuc = (props: Props) => {
                   GoToDetailPage(
                     "/chi-tiet-tin-tuc",
                     state.DataItemTinTucNoiBat[i].Id as string,
-                    state.DataItemTinTucNoiBat[i].MaURL as string,
+                    state.DataItemTinTucNoiBat[i].TieuDe as string,
                     "tintuc"
                   )
                 }
@@ -269,7 +264,7 @@ const KienThuc = (props: Props) => {
                             GoToDetailPage(
                               "/chi-tiet-tin-tuc",
                               e.Id as string,
-                              e.MaURL as string,
+                              e.TieuDe as string,
                               "tintuc"
                             )
                           }
@@ -316,7 +311,7 @@ const KienThuc = (props: Props) => {
                   <h6 className="kik-kh-kuki">
                     <i className="bi bi-bookmark-star-fill"></i> Chuyên mục
                   </h6>
-                  <div className="backgroundColorTreeMenu backgroundColorTreeMenuKienThuc">
+                  <div className="backgroundColorTreeMenu">
                     <TreeMenu
                       data={state.TreeChuyenMuc}
                       openNodes={initialOpenNodes(state.TreeChuyenMuc)}

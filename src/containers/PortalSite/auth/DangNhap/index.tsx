@@ -2,7 +2,7 @@ import CNotification from "components/CNotification";
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-import banner from "assets/img/banner.jpg";
+import banner from "assets/img/BannerLog.png";
 import { Actions } from "store/Global/Action";
 import { Message, UserType } from "common/Enums";
 import { Storage } from "common/Storage";
@@ -111,7 +111,7 @@ const DangNhap = (props: Props) => {
       <section className="h-100 h-custom">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-8 col-xl-6">
+            <div className="w-100 col-lg-8 col-xl-6">
               <div className="card rounded-3">
                 <img
                   src={banner}
@@ -225,7 +225,7 @@ const DangNhap = (props: Props) => {
                           onClick={() => {
                             DangNhap();
                           }}
-                          className="mb-3 header_btn bg-danger text-light "
+                          className="mb-3 header_btn bg-success text-light "
                           style={{ width: "120px" }}
                         >
                           Đăng nhập
@@ -281,7 +281,7 @@ const DangNhap = (props: Props) => {
                             register();
                           }}
                         >
-                          Đăng ký.
+                          Hãy tạo ngay.
                         </span>
                       </p>
                     )}

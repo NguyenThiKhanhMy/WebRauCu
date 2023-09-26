@@ -10,7 +10,6 @@ import { Reducer } from "./Reducer";
 import HocVienFormInputJson from "./FormInput.json";
 import HocVienFormJSON from "./FormInputHocVien.json";
 import HocVienFormTaoMoi from "./FormInputTaoMoi.json";
-import CConfirm from "components/CConfirm";
 interface Props {
   Id: string;
   ReloadTableItems: any;
@@ -31,7 +30,22 @@ const HocVienForm = (props: Props) => {
   const refNotification = useRef<any>();
   const refDynamicForm = useRef<any>();
 
-  const ActionEvents = {};
+  const ActionEvents = {
+    onClickActivate: async () => {
+      let res: IResponseMessage = null;
+
+      if (state.DataItem.IsActive) {
+        res = await Actions.UnActive(state.DataItem.Id);
+      } else {
+        res = await Actions.Active(state.DataItem.Id);
+      }
+      if (res.Success) {
+        refNotification.current.showNotification("success", res.Message);
+        props.ReloadTableItems();
+        props.hideDialog();
+      }
+    },
+  };
 
   const ActionEvents2 = {
     onClickUpdateNewItem: async () => {
@@ -68,19 +82,17 @@ const HocVienForm = (props: Props) => {
   };
   return (
     <>
-     
-
       <CNotification ref={refNotification} />
-      {props.build == 1 ? (
+      {props.build == 1 || props.build == 2 ? (
         <>
           <CDynamicForm
             ref={refDynamicForm}
             options={state.Options}
             initValues={state.DataItem}
             formDefs={
-              HocVienFormInput[0]
+              props.build == 1 ? HocVienFormInput[0] : HocVienFormInput[1]
             }
-            // actionEvents={ActionEvents}
+            actionEvents={props.build == 2 && ActionEvents}
           />
         </>
       ) : (

@@ -22,4 +22,4 @@ const CDialog = (props: Props) => {
             </Dialog>
 }
 
-export default CDialog;
+export default React.memo(CDialog);

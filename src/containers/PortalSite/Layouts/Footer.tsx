@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import logo from "../../../assets/img/logoRun.png";
+import logo from "../../../assets/img/logo.png";
 import { Actions } from "store/Global/Action";
 import data from "assets/json/Footer_config.json";
 import { useHistory } from "react-router-dom";
@@ -16,10 +16,20 @@ interface Props {
 }
 
 const Footer = (props: Props) => {
-
+  const [mxh, setMxh] = useState([] as object[]);
+  const [mxh1, setMxh1] = useState([] as object[]);
   const [footer1, setFooter1] = useState([]);
   const [footer2, setFooter2] = useState([]);
   const history = useHistory();
+
+  const fetchMXH = async () => {
+    // let resMXH1 = await props.GetLoai(1);
+    // let resMXH2 = await props.GetLoai(0);
+    // setMxh(resMXH1.Data.Items);
+    // setMxh1(resMXH2.Data.Items);
+    //props.GetToInfoShop();
+    //props.GetToSocialMedia();
+  };
 
   const fetchFooter = async () => {
     let foot1 = await props.GetFooter(
@@ -35,6 +45,7 @@ const Footer = (props: Props) => {
   };
 
   useEffect(() => {
+    fetchMXH();
     fetchFooter();
   }, []);
 
@@ -51,9 +62,9 @@ const Footer = (props: Props) => {
   props.global.SocialMedia &&
   props.global.SocialMedia.map((value: any) => {
       return (
-        <a key={uuidv4()} className="header_link" href={value.Value} target="_blank">
+        <span key={uuidv4()} className="header_link">
           <i className={`${value.Code}`}></i>
-        </a>
+        </span>
       );
     });
 
@@ -113,7 +124,7 @@ const Footer = (props: Props) => {
     });
 
   return (
-    <div className="footer bg-danger text-light ">
+    <div className="footer bg-success text-light ">
       <div className="container-xl d-flex flex-column justify-content-center h-100 gap-2">
         <div className="d-flex justify-content-evenly footer_container">
           <div className="a">

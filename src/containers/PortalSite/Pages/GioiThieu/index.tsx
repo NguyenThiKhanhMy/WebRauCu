@@ -10,13 +10,14 @@ const HtmlToReactParser = require("html-to-react").Parser;
 const htmlToReactParser = new HtmlToReactParser();
 const { v4: uuidv4 } = require("uuid");
 
-interface Props { }
+interface Props {}
 
 const GioiThieu = (props: Props) => {
   const [state, dispatch] = useReducer(Reducer, InitState);
 
   useEffect(() => {
     Actions.GetCauHinhBlog(dispatch);
+    Actions.GetThanhTich(dispatch);
     document.title = "Giới thiệu";
   }, []);
 
@@ -141,6 +142,18 @@ const GioiThieu = (props: Props) => {
                 </section>
               </section>
             ))}
+        </article>
+      </section>
+
+      <section className="gioi_thieu_chia_container container-xl mt-4"></section>
+
+      <section className="gioi_thieu_container_binh_luan">
+        <article>
+          <h3 className="text-danger">{data.ReviewTuHocVien.TieuDe}</h3>
+          <section>
+            <section>{binh_luan_trai}</section>
+            <section>{binh_luan_phai}</section>
+          </section>
         </article>
       </section>
     </main>

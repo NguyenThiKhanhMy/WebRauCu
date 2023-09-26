@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { connect } from "react-redux";
 import Comment from "../Comment/TinTucComment/comment";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { InitState } from "./InitState";
 import { Actions } from "./Action";
 import { Reducer } from "./Reducer";
@@ -12,44 +12,24 @@ const HtmlToReactParser = require("html-to-react").Parser;
 const htmlToReactParser = new HtmlToReactParser();
 import { Storage } from "common/Storage";
 
-interface Props { }
+interface Props {}
 
 const ChiTiet = (props: Props) => {
-  console.log(123)
   const [state, dispatch] = useReducer(Reducer, InitState);
   let userInfo: IUserInfo = JSON.parse(Storage.getSession("UserInfo"));
-  const history = useHistory();
+
   const location = useLocation();
+
   useEffect(() => {
-    if (!location.state || location.state.type == "tintuc") {
-      let ids = undefined;
-      if(location.search.includes("?%2F")){
-        ids = location.search.split("?%2F");
-      }
-      else{
-        ids = location.search.split("?/");
-      }
-      let id = ids[ids.length - 1];
-      Actions.GetDetailTinTuc(id, dispatch);
+    if (location.state.type == "tintuc") {
+      Actions.GetDetailTinTuc(location.state.id, dispatch);
     }
-    if (location.state && location.state.type == "sukien") {
+    if (location.state.type == "sukien") {
       Actions.GetDetailSuKien(location.state.id, dispatch);
     }
-    //Actions.GetTinTucLienQuan(location.state.id, dispatch);
-  }, [location]);
-  const GoToDetailPage = (
-    page: string,
-    id: string,
-    search: string,
-    type: string
-  ) => {
-    history.push({
-      pathname: page,
-      state: { id: id, type: type },
-      search: `/${type}`,
-    });
-    window.scrollTo(0, 0);
-  };
+    Actions.GetTinTucLienQuan(location.state.id, dispatch);
+  }, [location.state.id, location.state.type]);
+
   const tintuc = state.DataDetailTinTucLienQuan && (
     <div className="container mt-3 mb-2">
       <div className="row row-cols-1 row-cols-md-4 g-3 kt-round-dudat d-flex justify-content-center">
@@ -71,14 +51,7 @@ const ChiTiet = (props: Props) => {
               <div className="card-body card_body_override card-bodys start-aib-aba">
                 <p
                   className="card-title underline-head-tt text-uppercase"
-                  onClick={() =>
-                    GoToDetailPage(
-                      "/chi-tiet-tin-tuc",
-                      tree.Id as string,
-                      tree.TieuDe as string,
-                      "tintuc"
-                    )
-                  }
+                  // onClick={() => GoToOtherPage("/khoa-hoc")}
                 >
                   {tree.TieuDe}
                 </p>
@@ -93,12 +66,12 @@ const ChiTiet = (props: Props) => {
 
   return (
     <div className="container mt-3">
-      {(!location.state || location.state.type == "tintuc") && (
+      {location.state.type == "tintuc" && (
         <div id="main_newss_fat">
           <div className="container main_newss d-dex-f mt-3">
             <div className="neil-ch">
               <h4 className="text-center text-danger">
-                {(!location.state || location.state.type == "tintuc")
+                {location.state.type == "tintuc"
                   ? "Kiến thức"
                   : "Chỉnh dáng chạy bộ"}
               </h4>
@@ -122,12 +95,12 @@ const ChiTiet = (props: Props) => {
         </div>
       )}
 
-      {(location.state && location.state.type == "sukien") && (
+      {location.state.type == "sukien" && (
         <div id="main_newss_fat">
           <div className="container main_newss d-dex-f mt-3">
             <div className="neil-ch">
               <h4 className="text-center text-danger">
-                {(!location.state || location.state.type == "tintuc")
+                {location.state.type == "tintuc"
                   ? "Kiến thức"
                   : "Chỉnh dáng chạy bộ"}
               </h4>
@@ -156,7 +129,7 @@ const ChiTiet = (props: Props) => {
         )}
       </div>
 
-      {(!location.state || location.state.type == "tintuc") &&
+      {location.state.type == "tintuc" &&
         state.DataDetailTinTucLienQuan.length > 0 && (
           <div className="pb-5 restric-duboi mb-3" id="main_newss_fat cs-oi-a">
             <h5 className="mt-2 text-uppercase do-bop-ava">

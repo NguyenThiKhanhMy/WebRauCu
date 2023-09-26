@@ -16,7 +16,6 @@ import admin_config from 'assets/json/admin_config.json';
 import portal_config from 'assets/json/portal_config.json'
 import TrangChu from './PortalSite/Pages/TrangChu';
 import LayoutPortal from 'containers/PortalSite/Layouts';
-import ChatBot from 'components/ChatBot';
 interface Props {
     Apps: any
 }
@@ -51,14 +50,12 @@ const App = (props: Props) => {
         }
         return routes;
     }
-    return (       
-        <>
-            <Router> 
-                <Switch>      
-                    {RoutesRender()}
-                </Switch>                                
-            </Router> 
-        </>  
+    return (         
+        <Router> 
+            <Switch>      
+                {RoutesRender()}
+            </Switch>                                
+        </Router> 
     )
 }
 const mapState = ({ ...state }) => ({

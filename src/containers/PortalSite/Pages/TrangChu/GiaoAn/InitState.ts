@@ -6,7 +6,6 @@ export interface IModelMonHocCon {
   URL_AnhDaiDien: String;
   TieuDe: String;
   DSKhoiMonHoc?: any;
-  MaURL: any;
 }
 
 export interface IState {

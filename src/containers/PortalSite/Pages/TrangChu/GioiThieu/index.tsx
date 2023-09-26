@@ -41,7 +41,7 @@ const GioiThieu = (props: Props) => {
         <h4 className="text-danger tieu-de text-uppercase">
           {state.DataItemsGioiThieu.TenNhomGioiThieu}
         </h4>
-        <div className=" mt-3">
+        <div className="container-xl mt-3">
           <div className="row gap-3 justify-content-center align-items-center">
             {state.DataItemsGioiThieu.DanhSachGioiThieu.map(
               (child: danhSachTintuc) => (

@@ -5,10 +5,6 @@ import QuanLyLopHocService from "services/QuanLyLopHocService";
 import { IModelItem } from "../InitState";
 
 export const Actions: any = {
-  XoaHocVien: async (idLopHoc: any, idHocVien: any, dispatch: any) => {
-    let res: IResponseMessage = await QuanLyLopHocService.XoaHocVien(idLopHoc, idHocVien);
-    return res;
-  },
   GetItem: async (id: String, dispatch: any) => {
     if (id) {
       let res: IResponseMessage = await QuanLyLopHocService.GetItem(id);
@@ -36,12 +32,12 @@ export const Actions: any = {
         type: "getReset",
       });
     }
-    if (data = "quantrong") {
+    if (data = "quantrong"){
       dispatch({
         type: "getQuanTrong",
       });
     }
-    if (data = "kiemtra") {
+    if (data = "kiemtra"){
       dispatch({
         type: "getKiemTra",
       });
