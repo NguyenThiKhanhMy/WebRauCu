@@ -1,0 +1,54 @@
+{
+  "Key": "TuVan",
+  "Title": "Tư vấn",
+  "Rows": 5,
+  "Controls": [
+    {
+      "Key": "Ten",
+      "Title": "Tên",
+      "Type": "InputText",
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "Sdt",
+      "Title": "Số điện thoại",
+      "Type": "InputText",
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "Email",
+      "Title": "Email",
+      "Type": "InputText",
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "GioiTinh",
+      "Title": "Giới tính",
+			"Type": "Select",
+			"Placeholder": "---Chọn---", 
+			"Options": [{ "value": 0, "label": "Nam" },{ "value": 1, "label": "Nữ" },{ "value": 2, "label": "Khác" }],
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NoiDung",
+      "Title": "Nội dung",
+      "Type": "TextArea",
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ]
+}

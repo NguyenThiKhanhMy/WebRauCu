@@ -1,0 +1,81 @@
+{
+  "DataGrid": {
+    "Key": "SuKien",
+    "Title": "Danh sách sự kiện",
+    "ColumnDefs": [
+      {
+        "Key": "NhomSuKien",
+        "Title": "Nhóm sự kiện",
+        "Align": "left"
+      },
+      {
+        "Key": "Ten",
+        "Title": "Tên",
+        "Align": "left",
+        "Width": "500"
+      },
+      {
+        "Key": "TrangThai",
+        "Title": "Tình trạng",
+        "Align": "center",
+        "Options": [
+          { "value": 0, "label": "Chưa diễn ra" },
+          { "value": 1, "label": "Đang diễn ra" },
+          { "value": 2, "label": "Đã diễn ra" }
+        ]
+      },
+      {
+        "Key": "ThoiGian",
+        "Title": "Thời gian diễn ra",
+        "Align": "center",
+        "Format": "dd/MM/yyyy"
+      },
+      {
+        "Key": "GiaTien",
+        "Title": "Giá tiền",
+        "Align": "center"
+      },
+      {
+        "Key": "TrangThaiBanGhi",
+        "Title": "Trạng thái",
+        "Align": "center",
+        "Options": [
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
+        ]
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "BL",
+        "Title": "Bình luận sự kiện",
+        "Type": "Button",
+        "Action": "onClickBL"
+      },
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

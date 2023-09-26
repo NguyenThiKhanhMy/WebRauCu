@@ -1,0 +1,76 @@
+{
+  "DataGrid": {
+    "Key": "HocVien",
+    "Title": "Danh sách học viên",
+    "ColumnDefs": [
+      {
+        "Key": "FullName",
+        "Title": "Họ và Tên",
+        "Align": "center"
+      },
+      {
+        "Key": "Email",
+        "Title": "Email",
+        "Align": "center"
+      },
+      {
+        "Key": "Phone",
+        "Title": "Số điện thoại",
+        "Align": "center"
+      },
+      {
+        "Key": "Address",
+        "Title": "Địa chỉ",
+        "Align": "center"
+      },
+      {
+        "Key": "Note",
+        "Title": "Ghi chú",
+        "Align": "center"
+      },
+      {
+        "Key": "IsActive",
+        "Title": "Trạng thái",
+        "Align": "center",
+        "Options": [
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
+        ]
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Show",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xem chi tiết",
+        "Icon": "bi bi-person-fill",
+        "Action": "onClickShow"
+      },
+      {
+        "Key": "Active",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thay đổi trạng thái",
+        "Icon": "bi bi-lock-fill",
+        "Action": "onClickActivate"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "Key": "CTV",
+  "Title": "Cộng tác viên",
+  "Rows": 3,
+  "Controls": [
+    {
+      "Key": "SoLuong",
+      "Title": "Số lượng",
+      "Type": "InputNumber",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "ChietKhau",
+      "Title": "Chiết khấu",
+      "Type": "InputNumber",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NgayBan",
+      "Title": "Ngày bán",
+      "Type": "Date",
+      "IsRequired": true,
+      "Row": 3,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    }
+   
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Xác nhận",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

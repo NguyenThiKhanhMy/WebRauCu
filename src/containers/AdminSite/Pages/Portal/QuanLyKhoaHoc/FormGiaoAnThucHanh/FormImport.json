@@ -1,0 +1,27 @@
+{
+  "Key": "KhoaHoc",
+  "Title": "khoa học",
+  "Rows": 1,
+  "Controls": [
+    {
+      "Key": "uploadedFile",
+      "Title": "File giáo án",
+      "Type": "UploadFile",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "importFile",
+      "Title": "Xác nhận",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "",
+      "Action": "onClickSaveImport"
+    }
+  ]
+}

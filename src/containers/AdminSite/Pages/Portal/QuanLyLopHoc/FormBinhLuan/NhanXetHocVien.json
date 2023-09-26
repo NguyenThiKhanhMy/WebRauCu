@@ -1,0 +1,32 @@
+{
+  "DataGrid": {
+    "Key": "NhanXetHocViens",
+    "Title": "Nhận xét học viên",
+    "ColumnDefs": [
+      {
+        "Key": "TaiKhoan",
+        "Title": "Tài khoản",
+        "Align": "center",
+        "Width": 150
+      },
+      {
+        "Key": "BinhLuan",
+        "Title": "Nội dung",
+        "Align": "center"
+      },
+      {
+        "Key": "TrangThaiBanGhi",
+        "Title": "Trạng thái",
+        "Align": "center",
+        "Width": 100,
+        "Options": [
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
+        ]
+      }
+    ],
+    "ActionDefs": [
+     
+    ]
+  }
+}

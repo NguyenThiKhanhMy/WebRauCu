@@ -1,0 +1,28 @@
+{
+  "DataGrid": {
+    "Key": "HoTro",
+    "Title": "Danh sách thiết bị truy cập",
+    "ColumnDefs": [
+      {
+        "Key": "UserName",
+        "Title": "Tài khoản",
+        "Align": "center"
+      },
+      {
+        "Key": "RemoteIpAddress",
+        "Title": "Địa chỉ thiết bị",
+        "Align": "center"
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

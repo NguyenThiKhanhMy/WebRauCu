@@ -1,0 +1,21 @@
+{
+  "DataGrid": {
+    "Key": "CTVs3",
+    "Title": "Danh sách khóa học",
+    "ColumnDefs": [
+      {
+        "Key": "TieuDe",
+        "Title": "Tiêu đề",
+        "Align": "left",
+        "Width": "500"
+      },
+      {
+        "Key": "TenLoaiKhoaHoc",
+        "Title": "Loại khóa học",
+        "Align": "center"
+      }
+    ],
+    "ActionDefs": [
+    ]
+  }
+}

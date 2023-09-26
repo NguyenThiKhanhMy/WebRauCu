@@ -1,0 +1,77 @@
+{
+  "Key": "NhomThAnh",
+  "Title": "nhóm ảnh",
+  "Rows": 5,
+  "Controls": [
+    {
+      "Key": "TenGiaiChay",
+      "Title": "Giải chạy",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TieuDe",
+      "Title": "Người đạt thành tích",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_AnhGioiThieu1",
+      "Title": "Ảnh giới thiệu 1",
+      "Type": "InputTextSearch",
+      "IsRequired": false,
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_AnhGioiThieu2",
+      "Title": "Ảnh giới thiệu 2",
+      "Type": "InputTextSearch",
+      "IsRequired": false,
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "SoThuTu",
+      "Title": "Số thứ tự",
+      "Type": "InputNumber",
+      "IsRequired": false,
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NoiDung",
+      "Title": "Nội dung",
+      "Type": "TextArea",
+      "IsRequired": false,
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

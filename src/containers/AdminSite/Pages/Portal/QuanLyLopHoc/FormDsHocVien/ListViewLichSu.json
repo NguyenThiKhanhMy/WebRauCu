@@ -1,0 +1,49 @@
+{
+  "DataGrid": {
+    "Key": "HocVien",
+    "Title": "Danh sách học viên",
+    "ColumnDefs": [
+      {
+        "Key": "TenGiaoAn",
+        "Title": "Tên giáo án",
+        "Align": "left"
+      },
+      {
+        "Key": "Diem",
+        "Title": "Điểm",
+        "Align": "center"
+      },
+      {
+        "Key": "NguoiNopBai",
+        "Title": "Người nộp bài",
+        "Align": "left"
+      },
+      {
+        "Key": "NoiDungNopBai",
+        "Title": "Nội dung",
+        "Align": "left"
+      },
+      {
+        "Key": "NguoiNhanXet",
+        "Title": "Người nhận xét",
+        "Align": "left"
+      },
+      {
+        "Key": "NoiDungNhanXet",
+        "Title": "Nhận xét",
+        "Align": "left"
+      },
+      {
+        "Key": "por_LopHoc_HocVien_FileNopBais",
+        "Title": "",
+        "Align": "center",
+        "Format": "file",
+        "MappingProps": { "KeyTitle": "TieuDeFile", "KeyURL": "URL_FileNopBai"},
+        "Width": 80
+      }
+    ],
+    "ActionDefs": [
+
+    ]
+  }
+}

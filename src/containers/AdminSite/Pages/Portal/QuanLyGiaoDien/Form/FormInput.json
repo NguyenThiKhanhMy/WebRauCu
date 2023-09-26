@@ -1,0 +1,39 @@
+{
+  "Key": "GiaoVien",
+  "Title": "Giáo viên",
+  "Rows": 2,
+  "Controls": [
+    {
+      "Key": "GiaoDien",
+      "Title": "Giao diện",
+      "Type": "Select",
+      "IsRequired": true,
+      "Placeholder": "---Chọn---",
+      "Options": [{ "label": "Trang chủ", "value": 0 }],
+      "Row": 1,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NoiDung",
+      "Title": "Nội dung",
+      "Type": "TextArea",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

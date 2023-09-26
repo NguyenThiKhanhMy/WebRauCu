@@ -1,0 +1,33 @@
+{
+  "DataGrid": {
+    "Key": "TuVan",
+    "Title": "Danh sách tư vấn",
+    "ColumnDefs": [
+      {
+        "Key": "Ten",
+        "Title": "Tên",
+        "Align": "center"
+      },
+      {
+        "Key": "Sdt",
+        "Title": "Số điện thoại",
+        "Align": "center"
+      },
+      {
+        "Key": "Email",
+        "Title": "Email",
+        "Align": "center"
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Show",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xem chi tiết",
+        "Icon": "search",
+        "Action": "onClickShow"
+      }
+    ]
+  }
+}

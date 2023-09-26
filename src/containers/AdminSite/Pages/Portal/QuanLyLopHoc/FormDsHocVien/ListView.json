@@ -1,0 +1,31 @@
+{
+  "DataGrid": {
+    "Key": "HocVien",
+    "Title": "Danh sách học viên",
+    "ColumnDefs": [
+      {
+        "Key": "FullName",
+        "Title": "Họ và tên",
+        "Align": "center"
+      },
+      {
+        "Key": "UserName",
+        "Title": "Tên đăng nhập",
+        "Align": "left"
+      },
+      {
+        "Key": "Email",
+        "Title": "Email",
+        "Align": "center"
+      },
+      {
+        "Key": "Phone",
+        "Title": "Phone",
+        "Align": "center"
+      }
+    ],
+    "ActionDefs": [
+
+    ]
+  }
+}

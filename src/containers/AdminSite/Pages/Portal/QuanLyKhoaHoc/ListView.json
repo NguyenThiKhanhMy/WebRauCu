@@ -1,0 +1,80 @@
+{
+  "DataGrid": {
+    "Key": "KhoaHoc",
+    "Title": "Danh sách khóa học",
+    "ColumnDefs": [
+      {
+        "Key": "TenMonHoc",
+        "Title": "Môn học",
+        "Align": "left",
+        "Width": "250"
+      },
+      {
+        "Key": "TieuDe",
+        "Title": "Tiêu đề",
+        "Align": "left",
+        "Width": "500"
+      },
+      {
+        "Key": "TenLoaiKhoaHoc",
+        "Title": "Loại khóa học",
+        "Align": "center"
+      },
+      {
+        "Key": "ThoiHan",
+        "Title": "Thời hạn",
+        "Align": "center"
+      },
+      {
+        "Key": "TrangThai",
+        "Title": "Tình trạng",
+        "Align": "center",
+        "Options": [
+          { "value": true, "label": "Mở" },
+          { "value": false, "label": "Đóng" }
+        ]
+      },
+      {
+        "Key": "TrangThaiBanGhi",
+        "Title": "Trạng thái",
+        "Align": "center",
+        "Options": [
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
+        ]
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "BL",
+        "Title": "Bình luận khóa học",
+        "Type": "Button",
+        "Action": "onClickBL"
+      },
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

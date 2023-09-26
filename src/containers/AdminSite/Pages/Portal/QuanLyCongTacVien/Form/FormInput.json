@@ -1,0 +1,72 @@
+{
+  "Key": "CTV",
+  "Title": "Cộng tác viên",
+  "Rows": 5,
+  "Controls": [
+    {
+      "Key": "Ten",
+      "Title": "Tên",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "GioiTinh",
+      "Title": "Giới tính",
+      "Type": "Select",
+      "Placeholder": "---Chọn---",
+      "IsRequired": true,
+      "Options": [
+        { "value": 0, "label": "Nam" },
+        { "value": 1, "label": "Nữ" }
+      ],
+      "Row": 2,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "Email",
+      "Title": "Email",
+      "Type": "InputText",
+      "IsRequired": false,
+      "Row": 3,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "Sdt",
+      "Title": "Số điện thoại",
+      "Type": "InputText",
+      "IsRequired": false,
+      "Row": 4,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "MoTa",
+      "Title": "Mô tả",
+      "Type": "TextArea",
+      "IsRequired": false,
+      "Row": 5,
+      "ColLabel": 3,
+      "ColControl": 9,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

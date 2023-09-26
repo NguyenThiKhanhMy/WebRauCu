@@ -1,0 +1,198 @@
+{
+  "Key": "KhoaHoc",
+  "Title": "khoa học",
+  "Rows": 10,
+  "Controls": [
+    {
+      "Key": "IdMonHoc",
+      "Title": "Môn học",
+      "Type": "Select",
+      "IsRequired": true,
+      "Placeholder": "---Chọn---",
+      "Options": [],
+      "KeyOptions": { "label": "Name", "value": "Id" },
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "IdLoaiKhoaHoc",
+      "Title": "Loại khóa học",
+      "Type": "Select",
+      "IsRequired": false,
+      "Placeholder": "---Chọn---",
+      "Options": [],
+      "KeyOptions": { "label": "TieuDe", "value": "Id" },
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_AnhDaiDien",
+      "Title": "Ảnh giới thiệu",
+      "Type": "InputTextSearch",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_AnhChiTiet",
+      "Title": "Ảnh chi tiết",
+      "Type": "InputTextSearch",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_VideoDaiDien",
+      "Title": "Video đại diện",
+      "Type": "InputTextSearch",
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TieuDe",
+      "Title": "Tiêu đề",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TrangThai",
+      "Title": "Tình trạng",
+      "Type": "Select",
+      "Placeholder": "---Chọn---",
+      "Options": [
+        { "value": true, "label": "Mở" },
+        { "value": false, "label": "Đóng" }
+      ],
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TyLeDanhGia",
+      "Title": "Đánh giá",
+      "Type": "Select",
+      "Placeholder": "---Chọn---",
+      "Options": [
+        { "value": 0, "label": "0 sao" },
+        { "value": 1, "label": "1 sao" },
+        { "value": 2, "label": "2 sao" },
+        { "value": 3, "label": "3 sao" },
+        { "value": 4, "label": "4 sao" },
+        { "value": 5, "label": "5 sao" }
+      ],
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "HocPhiGoc",
+      "Title": "Học phí gốc",
+      "Type": "InputNumber",
+      "IsRequired": true,
+      "Row": 6,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "HocPhiGiamGia",
+      "Title": "Học giảm giá",
+      "Type": "InputNumber",
+      "IsRequired": false,
+      "Row": 6,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "ThoiHan",
+      "Title": "Thời hạn",
+      "Type": "InputNumber",
+      "IsRequired": true,
+      "Row": 7,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "ThoiHanTruyCapMienPhi",
+      "Title": "Thời hạn truy cập miễn phí",
+      "Type": "InputNumber",
+      "IsRequired": false,
+      "Row": 7,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "GioiThieu",
+      "Title": "Giới thiệu",
+      "Type": "CkEditor",
+      "IsRequired": true,
+      "Row": 8,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NoiDung",
+      "Title": "Nội dung",
+      "Type": "CkEditor",
+      "IsRequired": true,
+      "Row": 9,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TrangThaiBanGhi",
+      "Title": "",
+      "CheckboxLabel": "Hoạt động",
+      "Type": "Checkbox",
+      "Options": [
+        { "value": true, "label": "Hoạt động" },
+        { "value": false, "label": "Không hoạt động" }
+      ],
+      "Row": 10,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "CreatedDateTime",
+      "Title": "Ngày tạo",
+      "Type": "Date",
+      "IsDisabled": true,
+      "Row": 10,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

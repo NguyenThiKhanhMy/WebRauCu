@@ -1,0 +1,19 @@
+{
+    "Menu" : [
+        {
+            "TieuDe": "Về chúng tôi",
+            "MaNhomTinTuc": "TT5",
+            "SoLuong": 4
+        },
+        {
+            "TieuDe": "Hỗ trợ",
+            "MaNhomTinTuc": "TT6",
+            "SoLuong": 4
+        }
+    ],
+    "Footer": {
+        "TieuDe": "NƠI HUẤN LUYỆN CHẠY BỘ CHUẨN CĂN BẢN",
+        "Mota": "Đăng Quang Marathon gồm những HLV huấn luyện chạy bộ và chạy trail chuẩn chuyên nghiệp",
+        "Mota1": "Copyright © 2020 Đăng Quang Marathon | Liên hệ mua khóa học: 0916 582 783"
+    }
+}

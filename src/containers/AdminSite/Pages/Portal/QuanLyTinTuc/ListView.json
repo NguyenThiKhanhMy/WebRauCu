@@ -1,0 +1,70 @@
+{
+  "DataGrid": {
+    "Key": "TinTuc",
+    "Title": "Danh sách tin tức",
+    "ColumnDefs": [
+      {
+        "Key": "NhomTinTuc",
+        "Title": "Nhóm tin tức",
+        "Align": "left"
+      },
+      {
+        "Key": "TieuDe",
+        "Title": "Tiêu đề",
+        "Align": "left"
+      },
+      {
+        "Key": "TacGia",
+        "Title": "Tác giả",
+        "Align": "center"
+      },
+      {
+        "Key": "NgayXuatBan",
+        "Title": "Ngày xuất bản",
+        "Align": "center",
+        "Format": "dd/MM/yyyy"
+      },
+      {
+        "Key": "TrangThaiBanGhi",
+        "Title": "Trạng thái",
+        "Align": "center",
+        "Options": [
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
+        ]
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "BL",
+        "Title": "Bình luận tin tức",
+        "Type": "Button",
+        "Action": "onClickBL"
+      },
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

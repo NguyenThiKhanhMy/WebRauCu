@@ -1,0 +1,76 @@
+{
+    "Key": "HocVien3s",
+    "Title": "Học viên",
+    "Rows": 6,
+    "Controls": [
+      {
+        "Key": "FullName",
+        "Title": "Họ và Tên",
+        "IsRequired": true,
+        "Type": "InputText",
+        "Row": 1,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Email",
+        "Title": "Email",
+        "IsRequired": true,
+        "Type": "InputText",
+        "Row": 2,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "PassWord",
+        "Title": "Mật khẩu",
+        "IsRequired": true,
+        "Type": "InputText",
+        "Row": 3,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Phone",
+        "Title": "Số điện thoại",
+        "IsRequired": true,
+        "Type": "InputText",
+        "Row": 4,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Address",
+        "Title": "Địa chỉ",
+        "Type": "InputText",
+        "Row": 5,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Note",
+        "Title": "Ghi chú",
+        "Type": "TextArea",
+        "Row": 6,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "CreateNewItem",
+        "Title": "Tạo mới",
+        "Type": "Submit",
+        "TitleTooltip": "",
+        "Icon": "circle-check",
+        "Action": "onClickCreateNewItem"
+      }
+    ]
+  }
+  

@@ -1,0 +1,71 @@
+{
+  "Key": "Menu",
+  "Title": "Cây menu",
+  "Rows": 5,
+  "Controls": [
+    {
+      "Key": "Ma",
+      "Title": "Mã",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 4,
+      "ColControl": 8,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "Ten",
+      "Title": "Tên",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 4,
+      "ColControl": 8,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "ThuTu",
+      "Title": "Thứ tự",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 3,
+      "ColLabel": 4,
+      "ColControl": 8,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL",
+      "Title": "Đường dẫn",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 4,
+      "ColLabel": 4,
+      "ColControl": 8,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TrangThaiBanGhi",
+      "CheckboxLabel": "Hoạt động",
+      "Type": "Checkbox",
+      "Placeholder": "---Chọn---",
+      "Options": [
+        { "value": true, "label": "Hoạt động" },
+        { "value": false, "label": "Không hoạt động" }
+      ],
+      "Row": 5,
+      "ColLabel": 4,
+      "ColControl": 8,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "DataGrid": {
+    "Key": "ChiTietGioHang",
+    "Title": "Danh sách khóa học",
+    "ColumnDefs": [
+      {
+        "Key": "TieuDeKhoaHoc",
+        "Title": "Tiêu đề",
+        "Align": "left"
+      },
+      {
+        "Key": "HocPhiGoc",
+        "Title": "Học phí gốc",
+        "Format": "money",
+        "Align": "center"
+      },
+      {
+        "Key": "HocPhiGiamGia",
+        "Title": "Học phí giảm giá",
+        "Format": "money",
+        "Align": "center"
+      },
+      {
+        "Key": "ThoiHan",
+        "Title": "Thời hạn",
+        "Align": "center"
+      },
+      {
+        "Key": "ThoiHanTruyCapMienPhi",
+        "Title": "Thời hạn truy cập miễn phí",
+        "Align": "center"
+      }
+    ],
+    "ActionDefs": [
+
+    ]
+  }
+}

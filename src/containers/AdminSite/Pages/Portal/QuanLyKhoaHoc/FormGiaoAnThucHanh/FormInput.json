@@ -1,0 +1,148 @@
+{
+  "Key": "KhoaHoc",
+  "Title": "khoa học",
+  "Rows": 9,
+  "Controls": [
+    {
+      "Key": "Loai",
+      "Title": "Loại",
+      "Type": "Select",
+      "IsRequired": true,
+      "Placeholder": "---Chọn---",
+      "Options": [
+        { "value": 0, "label": "- Tháng" },
+        { "value": 1, "label": "-- Tuần" },
+        { "value": 2, "label": "--- Thứ" },
+        { "value": 3, "label": "---- Bài học" }
+      ],
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "SoThuTu",
+      "Title": "Thứ tự",
+      "Type": "InputNumber",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_Video",
+      "Title": "Đường dẫn video",
+      "Type": "InputTextSearch",
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "ThoiLuong",
+      "Title": "Thời lượng",
+      "Type": "InputNumber",
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "DiemNopBai",
+      "Title": "Điểm nộp bài",
+      "Type": "InputNumber",
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "QuanTrong",
+      "Title": "Quan trọng",
+      "Type": "Checkbox",
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 2,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "MienPhi",
+      "Title": "Miễn phí",
+      "Type": "Checkbox",
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 2,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TieuDe",
+      "Title": "Tiêu đề",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NoiDung",
+      "Title": "Nội dung",
+      "Type": "CkEditor",
+      "Row": 6,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Refesh",
+      "Title": "Làm mới",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "",
+      "Action": "onClickRefesh"
+    },
+    {
+      "Key": "import",
+      "Title": "Import file",
+      "Type": "File",
+      "TitleTooltip": "",
+      "Icon": "",
+      "Action": "onClickImport"
+    },
+    {
+      "Key": "Copy",
+      "Title": "Sao chép",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "",
+      "Action": "onClickCopy"
+    },
+    {
+      "Key": "Append",
+      "Title": "Thêm vào",
+      "Type": "Button",
+      "TitleTooltip": "",
+      "Icon": "plus",
+      "Action": "onClickAppend"
+    },
+    {
+      "Key": "Update",
+      "Title": "Cập nhật",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "edit",
+      "Action": "onClickUpdate"
+    },
+    {
+      "Key": "Remove",
+      "Title": "Xóa",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "delete",
+      "Action": "onClickRemove"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Key": "Chuyen",
+  "Title": "khoa học C",
+  "Rows": 1,
+  "Controls": [
+    {
+      "Key": "IdKhoaHocDes",
+      "Title": "Tìm khóa học",
+      "Type": "InputTextSearch",
+      "IsRequired": true,
+      "Row": 1,
+      "Placeholder": "Nhập giáo án cần chuyển",
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12,
+      "Disabled": true
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "importFile",
+      "Title": "Xác nhận",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "",
+      "Action": "onClickSaveImport"
+    }
+  ]
+}

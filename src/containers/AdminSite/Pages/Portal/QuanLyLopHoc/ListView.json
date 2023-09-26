@@ -1,0 +1,64 @@
+{
+  "DataGrid": {
+    "Key": "LopHoc",
+    "Title": "Danh sách lớp học",
+    "ColumnDefs": [
+      {
+        "Key": "Ma",
+        "Title": "Mã lớp học",
+        "Align": "center",
+        "Width": 100,
+        "OrderBy": "asc"
+      },
+      {
+        "Key": "KhoaHoc",
+        "Title": "Khóa học",
+        "Align": "left"
+      },
+      {
+        "Key": "SLGiangVien",
+        "Title": "Số lượng giảng viên",
+        "Align": "center",
+        "Width": 100
+      },
+      {
+        "Key": "SLHocVien",
+        "Title": "Số lượng học viên",
+        "Align": "center",
+        "Width": 100
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "BL",
+        "Title": "Bình luận lớp học",
+        "Type": "Button",
+        "Action": "onClickBL"
+      },
+      {
+        "Key": "ChangeGiangVien",
+        "Title": "Thay đổi giảng viên",
+        "Type": "Button",
+        "TitleTooltip": "",
+        "Icon": "",
+        "Action": "onChangeGiangVien"
+      },
+      {
+        "Key": "DisplayDsGiangVien",
+        "Title": "Danh sách giảng viên",
+        "Type": "Button",
+        "TitleTooltip": "",
+        "Icon": "",
+        "Action": "onClickDisplayDsGiangVien"
+      },
+      {
+        "Key": "DisplayDsHocVien",
+        "Title": "Danh sách học viên",
+        "Type": "Button",
+        "TitleTooltip": "",
+        "Icon": "",
+        "Action": "onClickDisplayDsHocVien"
+      }
+    ]
+  }
+}

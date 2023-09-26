@@ -1,0 +1,78 @@
+[
+  {
+    "Key": "HocVien",
+    "Title": "Học viên",
+    "Rows": 6,
+    "Controls": [
+      {
+        "Key": "FullName",
+        "Title": "Họ và Tên",
+        "Type": "InputText",
+        "Row": 1,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Email",
+        "Title": "Email",
+        "Type": "InputText",
+        "Row": 2,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Phone",
+        "Title": "Số điện thoại",
+        "Type": "InputText",
+        "Row": 3,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Address",
+        "Title": "Địa chỉ",
+        "Type": "InputText",
+        "Row": 4,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "Note",
+        "Title": "Ghi chú",
+        "Type": "TextArea",
+        "Row": 5,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      },
+      {
+        "Key": "IsActive",
+        "Title": "",
+        "CheckboxLabel": "Hoạt động",
+        "Type": "Checkbox",
+        "Row": 6,
+        "ColLabel": 3,
+        "ColControl": 9,
+        "ColSpanControl": 12
+      }
+    ]
+  },
+  {
+    "Key": "HocVien",
+    "Title": "Học viên",
+    "ActionDefs": [
+      {
+        "Key": "Activate",
+        "Title": "Đổi trạng thái",
+        "Type": "Submit",
+        "TitleTooltip": "",
+        "Icon": "circle-check",
+        "Action": "onClickActivate"
+      }
+    ]
+  }
+]

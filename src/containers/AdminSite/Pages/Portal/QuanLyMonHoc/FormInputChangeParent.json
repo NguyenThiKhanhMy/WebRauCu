@@ -1,0 +1,31 @@
+{
+  "Key": "ParentId",
+  "Title": "",
+  "Rows": 1,
+  "Controls": [
+    {
+      "Key": "ParentId",
+      "Title": "Thuộc",
+      "Placeholder": "---Chọn---",
+      "Type": "Cascader",
+      "IsRequired": true,
+      "Filterable": true,
+      "ChangeOnSelect": true,
+      "KeyOptions":{ "children": "Children", "label": "Name", "value": "Id" },
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Accept",
+      "Title": "Chấp nhận",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickAccept"
+    }
+  ]
+}

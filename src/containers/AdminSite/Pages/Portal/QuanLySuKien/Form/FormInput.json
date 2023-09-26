@@ -1,0 +1,112 @@
+{
+  "Key": "SuKien",
+  "Title": "sự kiện",
+  "Rows": 11,
+  "Controls": [
+    {
+      "Key": "IdNhomSuKien",
+      "Title": "Nhóm sự kiện",
+      "Type": "Select",
+      "IsRequired": true,
+      "Placeholder": "---Chọn---",
+      "Options": [],
+      "KeyOptions": { "label": "Ten", "value": "Id" },
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "Ten",
+      "Title": "Tên",
+      "Type": "InputText",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "URL_AnhDaiDien",
+      "Title": "Ảnh giới thiệu",
+      "Type": "InputTextSearch",
+      "IsRequired": true,
+      "Row": 3,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TrangThai",
+      "Title": "Tình trạng",
+      "Type": "Select",
+      "Placeholder": "---Chọn---",
+      "Options": [
+        { "value": 0, "label": "Chưa diễn ra" },
+        { "value": 1, "label": "Đang diễn ra" },
+        { "value": 2, "label": "Đã diễn ra" }
+      ],
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "ThoiGian",
+      "Title": "Thời gian diễn ra",
+      "Type": "Date",
+      "Row": 4,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "GiaTien",
+      "Title": "Giá tiền",
+      "Type": "InputNumber",
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "DiaChi",
+      "Title": "Địa chỉ",
+      "Type": "InputText",
+      "Row": 5,
+      "ColLabel": 2,
+      "ColControl": 4,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "NoiDung",
+      "Title": "Nội dung",
+      "Type": "CkEditor",
+      "IsRequired": true,
+      "Row": 6,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "TrangThaiBanGhi",
+      "Title": "",
+      "CheckboxLabel": "Hoạt động",
+      "Type": "Checkbox",
+      "Row": 7,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    }
+  ]
+}

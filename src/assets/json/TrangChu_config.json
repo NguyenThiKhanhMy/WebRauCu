@@ -1,0 +1,78 @@
+{
+    "GioiThieu": {
+        "TieuDe": "ĐĂNG QUANG MARATHON",
+        "MaNhomTinTuc": "TT1",
+        "SoLuong": 3
+    },
+    "MonHoc": {
+        "TieuDe": "Các môn học nổi bật",
+        "DsMaMonHoc": [
+            {
+                "MaMonHoc": "MH4",
+                "SoLuong": 8,
+                "ThuTu": 4
+            },
+            {
+                "MaMonHoc": "MH3",
+                "SoLuong": 8,
+                "ThuTu": 3
+            },
+            {
+                "MaMonHoc": "MH2",
+                "SoLuong": 8,
+                "ThuTu": 2
+            },
+            {
+                "MaMonHoc": "MH1",
+                "SoLuong": 8,
+                "ThuTu": 1
+            }
+        ]
+    },
+    "KhoaHoc": [
+        {
+            "MaMonHoc": "GA1-1",
+            "MaLoai": [],
+            "SoLuong": 8
+        },
+        {
+            "MaMonHoc": "GA1-2",
+            "MaLoai": [],
+            "SoLuong": 8
+        },
+        {
+            "MaMonHoc": "GA1-4",
+            "MaLoai": [],
+            "SoLuong": 8
+        },
+        {
+            "MaMonHoc": "GA1-5",
+            "MaLoai": [],
+            "SoLuong": 8
+        },
+        {
+            "MaMonHoc": "GA1-6",
+            "MaLoai": [],
+            "SoLuong": 8
+        },
+        {
+            "MaMonHoc": "GA1-3",
+            "MaLoai": [],
+            "SoLuong": 8
+        }
+    ],
+    "SuKien": {
+        "TieuDe": "Sự kiện mới nhất",
+        "TinhTrang": [
+            0,
+            1,
+            2
+        ],
+        "SoLuong": 4
+    },
+    "TinTuc": {
+        "TieuDe": "Blog tin tức",
+        "MaNhomTinTuc": "TT2",
+        "SoLuong": 15
+    }
+}

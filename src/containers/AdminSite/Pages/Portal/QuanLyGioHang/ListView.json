@@ -1,0 +1,86 @@
+{
+  "DataGrid": {
+    "Key": "GioHang",
+    "Title": "Danh sách giỏ hàng",
+    "ColumnDefs": [
+      {
+        "Key": "TaiKhoan",
+        "Title": "Tài khoản",
+        "Align": "center"
+      },
+      {
+        "Key": "HoVaTenNguoiMua",
+        "Title": "Người mua",
+        "Align": "left"
+      },
+      {
+        "Key": "Email",
+        "Title": "Email",
+        "Align": "left"
+      },
+      {
+        "Key": "Sdt",
+        "Title": "SĐT",
+        "Align": "center"
+      },
+      {
+        "Key": "SoLuongKhoaHoc",
+        "Title": "Số lượng khóa học",
+        "Align": "center"
+      },
+      {
+        "Key": "TongThanhToan",
+        "Title": "Tổng thanh toán",
+        "Format": "money",
+        "Align": "center"
+      },
+      {
+        "Key": "NgayThanhToan",
+        "Title": "Ngày thanh toán",
+        "Format": "dd/MM/yyyy",
+        "Align": "center"
+      },
+      {
+        "Key": "KichHoatKhoaHoc",
+        "Title": "Kích hoạt",
+        "Align": "center",
+        "Options": [
+          {
+            "label": "Đã kích hoạt",
+            "value": true
+          },
+          {
+            "label": "Chưa kích hoạt",
+            "value": false
+          }
+        ]
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Actived",
+        "Title": "Kích hoạt khóa học",
+        "Type": "Button",
+        "TitleTooltip": "Kích hoạt khóa học",
+        "Icon": "",
+        "Action": "onClickActive"
+      },
+      {
+        "Key": "Show",
+        "Title": "Xem giỏ hàng",
+        "Type": "Button",
+        "TitleTooltip": "Xem chi tiết",
+        "Icon": "",
+        "Action": "onClickShow"
+      },
+      {
+        "Key": "XoaGioHang",
+        "Title": "Xóa giỏ hàng",
+        "Type": "Button",
+        "TitleTooltip": "Xóa giỏ hàng",
+        "Icon": "",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

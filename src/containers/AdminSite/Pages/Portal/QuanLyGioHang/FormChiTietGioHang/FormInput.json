@@ -1,0 +1,93 @@
+{
+	"Key" : "ChiTietGioHang",
+	"Title" : "Chi tiết giỏ hàng",
+	"Rows": 8,		
+	"Controls" : [
+		{
+			"Key": "Ma",
+			"Title": "Mã",     
+			"Type": "InputText",
+			"IsRequired": true,
+			"Row": 1,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "Ten",
+			"Title": "Tên",     
+			"Type": "InputText",
+			"IsRequired": true,
+			"Row": 2,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "GioiTinh",
+			"Title": "Giới tính",     
+			"Type": "Select",
+			"Placeholder": "---Chọn---", 
+			"Options": [{ "value": true, "label": "Nam" },{ "value": false, "label": "Nữ" }],
+			"Row": 3,
+			"ColLabel": 2, 
+			"ColControl": 4, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "NgaySinh",
+			"Title": "Ngày sinh",     
+			"Type": "Date",
+			"Row": 3,
+			"ColLabel": 2, 
+			"ColControl": 4, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "Email",
+			"Title": "Email",     
+			"Type": "InputText",
+			"Row": 4,
+			"ColLabel": 2, 
+			"ColControl": 4, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "Phone",
+			"Title": "Số điện thoại",     
+			"Type": "InputText",
+			"Row": 4,
+			"ColLabel": 2, 
+			"ColControl": 4, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "ChungChi",
+			"Title": "Chứng chỉ",     
+			"Type": "TextArea",
+			"Row": 5,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "ThanhTich",
+			"Title": "Thành tích",     
+			"Type": "TextArea",
+			"Row": 6,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		}
+	],
+	"ActionDefs" : [
+		{
+			"Key": "Save", 
+			"Title": "Lưu",
+			"Type": "Submit",
+			"TitleTooltip": "",
+			"Icon": "circle-check",
+			"Action": "onClickSave"
+		}
+	]
+}

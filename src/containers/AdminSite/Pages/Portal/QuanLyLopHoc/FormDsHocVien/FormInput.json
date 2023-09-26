@@ -1,0 +1,44 @@
+{
+  "Key": "HocVien",
+  "Title": "Học viên",
+  "Rows": 2,
+  "Controls": [
+    {
+      "Key": "noiDungNhanXet",
+      "Title": "Nhận xét",
+      "Type": "TextArea",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "chamDiem",
+      "Title": "Điểm",
+      "Type": "InputNumber",
+      "IsRequired": true,
+      "Row": 2,
+      "ColLabel": 2,
+      "ColControl": 10,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+    {
+      "Key": "Save",
+      "Title": "Lưu",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Icon": "circle-check",
+      "Action": "onClickSave"
+    },
+    {
+      "Key": "Back",
+      "Title": "Quay lại",
+      "Type": "Submit",
+      "TitleTooltip": "",
+      "Action": "onClickBack"
+    }
+  ]
+}

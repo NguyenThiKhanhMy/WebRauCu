@@ -1,0 +1,50 @@
+{
+  "DataGrid": {
+    "Key": "CTV",
+    "Title": "Lịch sử",
+    "ColumnDefs": [
+      {
+        "Key": "TenKhoaHoc",
+        "Title": "Tên khóa học",
+        "Align": "left"
+      },
+      {
+        "Key": "SoLuong",
+        "Title": "Số lượng",
+        "Align": "center"
+      },
+      {
+        "Key": "TongHocPhiGoc",
+        "Title": "Tổng học phí gốc",
+        "Format": "money",
+        "Align": "center"
+      },
+      {
+        "Key": "TongHocPhiGiamGia",
+        "Title": "Tổng học phí giảm giá",
+        "Format": "money",
+        "Align": "center"
+      },
+      {
+        "Key": "NgayBan",
+        "Title": "Ngày bán",
+        "Align": "center"
+      },
+      {
+        "Key": "ChietKhau",
+        "Title": "Chiết khấu",
+        "Align": "center",
+        "Format": "%"
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Delete",
+        "Title": "Xóa",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

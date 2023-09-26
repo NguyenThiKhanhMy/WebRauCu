@@ -1,0 +1,54 @@
+{
+  "DataGrid": {
+    "Key": "LoaiKhoaHoc",
+    "Title": "Danh sách loại khóa học",
+    "ColumnDefs": [
+      {
+        "Key": "Ma",
+        "Title": "Mã",
+        "Align": "center",
+        "OrderBy": "asc"
+      },
+      {
+        "Key": "TieuDe",
+        "Title": "Tiêu đề",
+        "Align": "center"
+      },
+      {
+        "Key": "TrangThaiBanGhi",
+        "Title": "Trạng thái",
+        "Align": "center",
+        "Options": [
+          { "value": true, "label": "Hoạt động" },
+          { "value": false, "label": "Không hoạt động" }
+        ]
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

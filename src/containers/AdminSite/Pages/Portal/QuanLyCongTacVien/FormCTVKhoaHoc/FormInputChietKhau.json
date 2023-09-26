@@ -1,0 +1,29 @@
+{
+  "Key": "CTV",
+  "Title": "Cộng tác viên",
+  "Rows": 2,
+  "Controls": [
+    {
+      "Key": "fromDate",
+      "Title": "Từ ngày",
+      "Type": "Date",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 1,
+      "ColControl": 5,
+      "ColSpanControl": 12
+    },
+    {
+      "Key": "toDate",
+      "Title": "Đến ngày",
+      "Type": "Date",
+      "IsRequired": true,
+      "Row": 1,
+      "ColLabel": 1,
+      "ColControl": 5,
+      "ColSpanControl": 12
+    }
+  ],
+  "ActionDefs": [
+  ]
+}

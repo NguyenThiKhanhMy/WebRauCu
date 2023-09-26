@@ -1,0 +1,116 @@
+{
+	"Key" : "GioHang",
+	"Title" : "Giỏ hàng",
+	"Rows": 9,		
+	"Controls" : [
+		{
+			"Key": "TaiKhoan",
+			"Title": "Tài khoản",     
+			"Type": "InputText",
+			"IsRequired": false,
+			"IsDisabled": true,
+			"Row": 1,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "HoVaTenNguoiMua",
+			"Title": "Người mua",     
+			"Type": "InputText",
+			"IsRequired": false,
+			"IsDisabled": true,
+			"Row": 2,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "Sdt",
+			"Title": "Số điện thoại",     
+			"Type": "InputText",
+			"IsRequired": false,
+			"IsDisabled": true,
+			"Row": 3,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "Email",
+			"Title": "Email",     
+			"Type": "InputText",
+			"IsRequired": false,
+			"IsDisabled": true,
+			"Row": 4,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "SoLuongKhoaHoc",
+			"Title": "Số lượng khóa học",     
+			"Type": "InputNumber",
+			"IsRequired": false,
+			"IsDisabled": true,
+			"Row": 5,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "TongThanhToan",
+			"Title": "Tổng thanh toán",     
+			"Type": "InputNumber",
+			"IsRequired": false,
+			"IsDisabled": true,
+			"Row": 6,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "SoTienDaChuyenKhoan",
+			"Title": "Số tiền chuyển khoản",     
+			"Type": "InputNumber",
+			"IsRequired": true,
+			"IsDisabled": false,
+			"Row": 7,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "NgayThanhToan",
+			"Title": "Ngày chuyển khoản",     
+			"Type": "Date",
+			"IsRequired": true,
+			"IsDisabled": false,
+			"Row": 8,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		},
+		{
+			"Key": "Files",
+			"Title": "File đính kèm",     
+			"Type": "UploadFile",
+			"IsRequired": false,
+			"Multiple": false,
+			"Row": 9,
+			"ColLabel": 2, 
+			"ColControl": 10, 
+			"ColSpanControl": 12
+		}
+	],
+	"ActionDefs" : [
+		{
+			"Key": "Save",
+			"Title": "Lưu thông tin chuyển khoản",
+			"Type": "Submit",
+			"TitleTooltip": "",
+			"Icon": "circle-check",
+			"Action": "onClickSave"
+		}
+	]
+}

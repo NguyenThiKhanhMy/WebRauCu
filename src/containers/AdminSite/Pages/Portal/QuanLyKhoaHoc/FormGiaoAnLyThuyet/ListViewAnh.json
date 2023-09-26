@@ -1,0 +1,43 @@
+{
+  "DataGrid": {
+    "Key": "Anh",
+    "Title": "Danh sách anh",
+    "ColumnDefs": [
+      {
+        "Key": "TieuDe",
+        "Title": "Tên Khóa học",
+        "Align": "start"
+      },
+      {
+        "Key": "Id",
+        "Hidden": true
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}

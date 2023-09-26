@@ -1,0 +1,56 @@
+{
+  "DataGrid": {
+    "Key": "Video",
+    "Title": "Danh sách video",
+    "ColumnDefs": [
+      {
+        "Key": "NhomVideo",
+        "Title": "Nhóm video",
+        "Align": "center"
+      },
+      {
+        "Key": "Ma",
+        "Title": "Mã",
+        "Align": "center",
+        "OrderBy": "asc"
+      },
+      {
+        "Key": "Ten",
+        "Title": "Tên",
+        "Align": "center"
+      },
+      {
+        "Key": "ThoiLuong",
+        "Title": "Thời lượng",
+        "Align": "center",
+        "Width": 100
+      }
+    ],
+    "ActionDefs": [
+      {
+        "Key": "Create",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Thêm mới",
+        "Icon": "plus",
+        "Action": "onClickCreate"
+      },
+      {
+        "Key": "Update",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Sửa",
+        "Icon": "edit",
+        "Action": "onClickUpdate"
+      },
+      {
+        "Key": "Delete",
+        "Title": "",
+        "Type": "Button",
+        "TitleTooltip": "Xóa",
+        "Icon": "delete",
+        "Action": "onClickDelete"
+      }
+    ]
+  }
+}
