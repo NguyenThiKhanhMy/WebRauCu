@@ -20,7 +20,6 @@ import CaNhan from "containers/PortalSite/Pages/CaNhan";
 import HocNgay from "containers/PortalSite/Pages/KhoaHoc/HocChinh";
 import TimKiem from "containers/PortalSite/Pages/TimKiem";
 import KhoaHocCaNhan from "containers/PortalSite/Pages/KhoaHocCaNhan";
-import ThanhTichHocVien from "containers/PortalSite/Pages/ThanhTichHocVien";
 import ChungChi from "containers/PortalSite/Pages/ChungChi";
 interface Props {}
 
@@ -64,8 +63,6 @@ const PortalRoute = (props: Props) => {
         return <DangKy />;
       case "ChiTietTinTuc":
         return <TinTuc />;
-      case "ThanhTichHocVien":
-        return <ThanhTichHocVien />
       default:
         return <></>;
     }

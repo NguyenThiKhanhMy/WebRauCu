@@ -23,12 +23,6 @@ const Footer = (props: Props) => {
   const history = useHistory();
 
   const fetchMXH = async () => {
-    // let resMXH1 = await props.GetLoai(1);
-    // let resMXH2 = await props.GetLoai(0);
-    // setMxh(resMXH1.Data.Items);
-    // setMxh1(resMXH2.Data.Items);
-    //props.GetToInfoShop();
-    //props.GetToSocialMedia();
   };
 
   const fetchFooter = async () => {
@@ -141,7 +135,14 @@ const Footer = (props: Props) => {
           </div>
           <div className="d-flex flex-column delay">
             <p className="footer_text_head e op">Thông tin liên hệ</p>
-            {lienHe}
+              <div className="d-flex align-items-center">
+                <i className="bi bi-telephone-fill active footer_text"></i>
+                <span className="header_top_left_text footer_text">0914 693 379</span>
+              </div>
+              <div className="d-flex align-items-center">
+                <i className="bi bi-envelope-at-fill footer_text"></i>
+                <span className="header_top_left_text footer_text">htxsapaagri@gmail.com</span>
+              </div>
             <div className="f d-flex gap-2 icon_f">{mangXaHoi}</div>
           </div>
         </div>

@@ -209,36 +209,6 @@ const Header = (props: Props) => {
     return arrCardInfo.length;
   };
 
-  const mangXaHoi =
-    props.global.InfoShop &&
-    props.global.InfoShop.map((value: any) => {
-      return (
-        <span key={uuidv4()} className="header_top_left_child">
-          <span className=" header_top_left_text">
-            <i className={`${value.Code}`}></i> {value.Value}
-          </span>
-        </span>
-      );
-    });
-
-  const icon =
-    props.global.SocialMedia &&
-    props.global.SocialMedia.map((value: any) => {
-      return (
-        <a
-          key={uuidv4()}
-          href={value.Value}
-          className="header_link h-100"
-          aria-label="See more"
-        >
-          <i
-            className={`${value.Code}`}
-            style={{ verticalAlign: "middle" }}
-          ></i>
-        </a>
-      );
-    });
-
   const searchbarsuv = () => {
     setChangeSearch(!changeSearch);
   };
@@ -251,36 +221,27 @@ const Header = (props: Props) => {
 
       <section className="header_portal_top bg-success text-light">
         <section className="container-xl header_top_container d-flex align-items-center justify-content-between">
-          <section className="header_top_mobile">
-            <section
-              id="carouselExampleIndicators"
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <section className="carousel-inner">
-                <section className="carousel-item active">
-                  <span>
-                    <i className="bi bi-telephone-fill	"></i>
-                  </span>
-                  <span className=" header_top_left_text">0914 693 379</span>
-                </section>
-                <section className="carousel-item">
-                  <span>
-                    <i className="bi bi-envelope-at-fill"></i>
-                  </span>
-                  <span className="header_top_left_text">
-                    htxsapaagri@gmail.com
-                  </span>
-                </section>
-              </section>
-            </section>
-          </section>
-
-          <span className="header_top_tab">{mangXaHoi}</span>
-
-          <span className="d-flex gap-2 align-items-center justify-content-center group_icon">
-            {icon}
-          </span>
+          <div className="d-flex gap-4">
+            <div className="d-flex align-items-center">
+              <i className="bi bi-telephone-fill active"></i>
+              <span className="header_top_left_text">0914 693 379</span>
+            </div>
+            <div className="d-flex align-items-center">
+              <i className="bi bi-envelope-at-fill"></i>
+              <span className="header_top_left_text">htxsapaagri@gmail.com</span>
+            </div>
+          </div>
+          <div className="d-flex gap-2">
+            <a href="https://www.facebook.com/htxsapaagri" style={{ color: "inherit", textDecoration: "none" }}>
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
+              <i className="bi bi-youtube"></i>
+            </a>
+            <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
+              <i className="bi bi-instagram"></i>
+            </a>
+          </div>
         </section>
       </section>
       <section className="container-xl header_bottom">
